@@ -5,46 +5,45 @@ Each program in this repository is stand-alone<br>
 Names are self-explanatory<br>
 In Python 2 but easily portable to 3 (mostly <i>xrange()</i> to <i>range()</i> and <i>print</i> to <i>print()</i>)
 
-
 <b>alignment.py</b><br>
-Sequence alignment:<br>
-align 2 strings minimizing substitution and insertion cost<br>
+Sequence alignment: align 2 strings minimizing substitution and insertion cost.<br>
 parameters:<br>
-penalty for substitution<br>
-penalty for gap insertion<br>
+- penalty for substitution<br>
+- penalty for gap insertion<br>
 return:<br>
-The first string with gap inserted<br>
-The second string with gap inserted<br>
-The total substitution and insertion cost<br>
+- The first string with gap inserted<br>
+- The second string with gap inserted<br>
+- The total substitution and insertion cost<br>
 
 <b>bellman_ford.py</b><br>
-Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths<br>
+Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths usign the Bellman-Ford algorithm.<br>
 /!\ distances can be < 0<br>
-/!\ no negative cycle can exist<br>
+/!\ no negative cycle can exist in the tree<br>
 return:<br>
-shortest distances<br>
-shortest path parents dictionary<br>
+- shortest distances<br>
+- shortest path parents dictionary<br>
+- generates an error if a negative cycle exists<br>
 
 <b>dijkstra - heap - show path.py</b><br>
-Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths<br>
+Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths using Dijkstra's algorithm<br>
 /!\ all distances must be >= 0<br>
 return:<br>
-shortest distances<br>
-shortest path parents dictionary<br>
+- shortest distances<br>
+- shortest path parents dictionary<br>
 (implementation using heap)<br>
 
 <b>dijkstra - heap.py</b><br>
-Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths<br>
+Compute all shortest distances from source to all points in graph using Dijkstra's algorithm<br>
 /!\ all distances must be >= 0<br>
 return:<br>
-shortest distances<br>
+- shortest distances<br>
 (implementation using heap)<br>
 
 <b>dijkstra - no heap.py</b><br>
-Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths<br>
+Compute all shortest distances from source to all points in graph as well using Dijkstra's algorithm<br>
 /!\ all distances must be >= 0<br>
 return:<br>
-shortest distances<br>
+- shortest distances<br>
 (plain implementation)<br>
 
 <b>find_all_paths.py</b><br>
@@ -55,17 +54,17 @@ Variant implemented: find only one.<br>
 Return a boolean indicating if a given number is prime<br>
 
 <b>knapsack.py</b><br>
-Knapsack algorithm
-Value = non-negative<br>
-Weight = non-negative and integral<br>
-Capacity (W) = a non-negative integer<br>
+Knapsack algorithm (Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible).
+- Value = non-negative<br>
+- Weight = non-negative and integral<br>
+- Total weight limit = a non-negative integer<br>
 2 algorithm implemented:<br>
 1/ recursive algorithm, return sum of values only, but list of item can be retrieved<br>
 2/ dynamic programming algorithm, return sum of values & list of items<br>
 
 <b>prim.py</b><br>
-Computes Prim's minimum spanning tree (MST) algorithm on a tree (costs can be negative)<br>
+Computes Prim's minimum spanning tree (MST) algorithm on a tree (edge's costs can be negative)<br>
 
 <b>traveling_salesman.py</b><br>
-Computes the shortest path between all nodes of a connected graph starting at one particular node and returning at that same node (connected = there is a path between every pair of nodes)<br>
+Computes the shortest path between all nodes of a connected graph starting at one particular node and returning at that same node (connected = there is a path between every pair of nodes).<br>
 (implementation with dynamic programming algorithm)<br>
