@@ -18,14 +18,12 @@ The second string with gap inserted<br>
 The total substitution and insertion cost<br>
 
 <b>bellman_ford.py</b><br>
-Compute all shortest distances from source to all points in graph aswell as the shortest corresponding paths<br>
+Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths<br>
 /!\ distances can be < 0<br>
-/!\ no negative cycle<br>
-return:
-d = shortest distances
-d[node] is the shortest distance from source to node
-p = shortest path parents dictionary
-p[node] is the parent of node in the shortest path from the given source
+/!\ no negative cycle can exist<br>
+return:<br>
+shortest distances<br>
+shortest path parents dictionary<br>
 
 <b>dijkstra - heap - show path.py</b><br>
 Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths<br>
