@@ -1,4 +1,4 @@
-# Python-Utilities
+# Python utilities
 My Python 2 utility programs
 
 Each program in this repository is a stand-alone file.<br>
