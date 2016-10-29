@@ -10,7 +10,7 @@ parameters:
 - penalty for substitution<br>
 - penalty for gap insertion<br>
 
-return:<br>
+return:
 - The first string with gap inserted<br>
 - The second string with gap inserted<br>
 - The total substitution and insertion cost<br>
@@ -19,6 +19,7 @@ return:<br>
 Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths usign the Bellman-Ford algorithm.<br>
 /!\ distances can be < 0<br>
 /!\ no negative cycle can exist in the tree<br>
+
 return:
 - shortest distances<br>
 - shortest path parents dictionary<br>
@@ -27,6 +28,7 @@ return:
 <b>dijkstra - heap - show path.py</b><br>
 Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths using Dijkstra's algorithm<br>
 /!\ all distances must be >= 0<br>
+
 return:
 - shortest distances<br>
 - shortest path parents dictionary<br>
@@ -35,6 +37,7 @@ return:
 <b>dijkstra - heap.py</b><br>
 Compute all shortest distances from source to all points in graph using Dijkstra's algorithm<br>
 /!\ all distances must be >= 0<br>
+
 return:
 - shortest distances<br>
 (implementation using heap)<br>
@@ -42,6 +45,7 @@ return:
 <b>dijkstra - no heap.py</b><br>
 Compute all shortest distances from source to all points in graph as well using Dijkstra's algorithm<br>
 /!\ all distances must be >= 0<br>
+
 return:
 - shortest distances<br>
 (plain implementation)<br>
@@ -58,6 +62,7 @@ Knapsack algorithm (Given a set of items, each with a weight and a value, determ
 - Value = non-negative<br>
 - Weight = non-negative and integral<br>
 - Total weight limit = a non-negative integer<br>
+
 2 algorithm implemented:<br>
 1/ recursive algorithm, return sum of values only, but list of item can be retrieved<br>
 2/ dynamic programming algorithm, return sum of values & list of items<br>
