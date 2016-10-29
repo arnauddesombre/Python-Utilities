@@ -90,3 +90,4 @@ print
 A, item = knapsack2(sizeKnapsack)
 print A
 print item
+print

@@ -1,5 +1,5 @@
 """
-The Bellman-Ford algorithm
+Bellman-Ford algorithm
 
 compute all shortest distances from source to all points
 in graph aswell as the shortest corresponding paths
@@ -71,3 +71,4 @@ print
 print A
 print
 print bellman_ford_path(parents, 'A', 'C')
+print

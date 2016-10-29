@@ -65,4 +65,3 @@ print a[1]
 print
 print "cost =", a[2]
 print
-

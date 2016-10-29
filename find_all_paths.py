@@ -5,9 +5,6 @@ by brute recursive enumeration
 
 Variant:
 find only one
-
-from:
-https://www.python.org/doc/essays/graphs/
 """
 import sys
 sys.setrecursionlimit(1000000)
