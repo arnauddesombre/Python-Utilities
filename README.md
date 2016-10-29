@@ -2,7 +2,7 @@
 My Python 2 utility programs
 
 Each program in this repository is a stand-alone file.<br>
-In Python 2 but easily portable to Python 3 (change <i>xrange()</i> to <i>range()</i> and <i>print</i> to <i>print()</i>).
+In Python 2 but easily portable to Python 3 (change <i>xrange(...)</i> to <i>range(...)</i> and <i>print ...</i> to <i>print(...)</i>).
 
 -----------------------
 
