@@ -7,9 +7,9 @@ In Python 2 but easily portable to 3 (mostly <i>xrange()</i> to <i>range()</i> a
 <b>alignment.py</b><br>
 Sequence alignment: align 2 strings minimizing substitution and insertion cost.<br>
 parameters:
-- penalty for substitution<br>
-- penalty for gap insertion<br>
-return:
+>penalty for substitution<br>
+>penalty for gap insertion<br>
+<br>return:<br>
 - The first string with gap inserted<br>
 - The second string with gap inserted<br>
 - The total substitution and insertion cost<br>
