@@ -1,12 +1,12 @@
 # Python-Utilites
 My Python 2 utility programs
 
-Each program in this repository is stand-alone<br>
-In Python 2 but easily portable to 3 (mostly <i>xrange()</i> to <i>range()</i> and <i>print</i> to <i>print()</i>)
+Each program in this repository is stand-alone.<br>
+In Python 2 but easily portable to 3 (mostly <i>xrange()</i> to <i>range()</i> and <i>print</i> to <i>print()</i>).
 
 <b>alignment.py</b><br>
 Sequence alignment: align 2 strings minimizing substitution and insertion cost.<br>
-parameters:<br>
+parameters:
 - penalty for substitution<br>
 - penalty for gap insertion<br>
 return:<br>
