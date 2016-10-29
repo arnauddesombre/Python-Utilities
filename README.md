@@ -9,7 +9,7 @@ Sequence alignment: align 2 strings minimizing substitution and insertion cost.<
 parameters:
 - penalty for substitution<br>
 - penalty for gap insertion<br>
-return:<br>
+return:
 - The first string with gap inserted<br>
 - The second string with gap inserted<br>
 - The total substitution and insertion cost<br>
@@ -18,7 +18,7 @@ return:<br>
 Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths usign the Bellman-Ford algorithm.<br>
 /!\ distances can be < 0<br>
 /!\ no negative cycle can exist in the tree<br>
-return:<br>
+return:
 - shortest distances<br>
 - shortest path parents dictionary<br>
 - generates an error if a negative cycle exists<br>
@@ -26,7 +26,7 @@ return:<br>
 <b>dijkstra - heap - show path.py</b><br>
 Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths using Dijkstra's algorithm<br>
 /!\ all distances must be >= 0<br>
-return:<br>
+return:
 - shortest distances<br>
 - shortest path parents dictionary<br>
 (implementation using heap)<br>
@@ -34,14 +34,14 @@ return:<br>
 <b>dijkstra - heap.py</b><br>
 Compute all shortest distances from source to all points in graph using Dijkstra's algorithm<br>
 /!\ all distances must be >= 0<br>
-return:<br>
+return:
 - shortest distances<br>
 (implementation using heap)<br>
 
 <b>dijkstra - no heap.py</b><br>
 Compute all shortest distances from source to all points in graph as well using Dijkstra's algorithm<br>
 /!\ all distances must be >= 0<br>
-return:<br>
+return:
 - shortest distances<br>
 (plain implementation)<br>
 
@@ -66,4 +66,4 @@ Computes Prim's minimum spanning tree (MST) algorithm on a tree (edge's costs ca
 
 <b>traveling_salesman.py</b><br>
 Computes the shortest path between all nodes of a connected graph starting at one particular node and returning at that same node (connected = there is a path between every pair of nodes).<br>
-(implementation with dynamic programming algorithm)<br>
+(implementation with dynamic programming algorithm)
