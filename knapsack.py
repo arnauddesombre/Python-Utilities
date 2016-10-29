@@ -9,8 +9,8 @@ recursive algorithm, return sum of values only, but list of item can be retrieve
 knapsack2:
 dynamic programming algorithm, return sum of values & list of items
 """
-weight = [] # weight of each item, in list format
-value = []  # value of each item, in list format
+weight = [] # weight of each item, in list format, [0] is not used
+value = []  # value of each item, in list format, [0] is not used
 
 import sys
 sys.setrecursionlimit(1000000)
