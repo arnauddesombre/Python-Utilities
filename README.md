@@ -1,4 +1,4 @@
-# Python-Utilites
+# Python-Utilities
 My Python 2 utility programs
 
 Each program in this repository is a stand-alone file.<br>
@@ -20,7 +20,7 @@ Return:
 -----------------------
 
 <b>bellman_ford.py</b><br>
-Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths usign the Bellman-Ford algorithm.<br>
+Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths using the Bellman-Ford algorithm.<br>
 /!\ distances can be < 0<br>
 /!\ no negative cycle can exist in the tree<br>
 
@@ -69,7 +69,7 @@ Variant implemented: find only one.<br>
 -----------------------
 
 <b>is_prime.py</b><br>
-Return a boolean indicating if a given number is prime.<br>
+Return a Boolean indicating if a given number is prime.<br>
 
 -----------------------
 
