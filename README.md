@@ -19,6 +19,18 @@ Return:
 
 -----------------------
 
+<b>arithmetic.py</b><br>
+Contains the following arithmetic functions:<br>
+- is_prime(n): Return boolean indicating if n is prime
+- gcd(a, b): Return greatest common divisor of a and b
+- gcdm(*args): Return gcd of args
+- lcm(a, b): Return lowest common multiple of a and b
+- lcmm(*args): Return lcm of args
+- prime_decomposition(n): Return all the prime factors of n in a list
+- factors(n): Return all the factors (divisors) of n in a list
+
+-----------------------
+
 <b>bellman_ford.py</b><br>
 Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths using the Bellman-Ford algorithm.<br>
 /!\ distances can be < 0<br>
@@ -65,11 +77,6 @@ return:
 <b>find_all_paths.py</b><br>
 Find all simple paths (no loop) in a graph starting from a specified node by brute recursive enumeration.<br>
 Variant implemented: find only one.<br>
-
------------------------
-
-<b>is_prime.py</b><br>
-Return a Boolean indicating if a given number is prime.<br>
 
 -----------------------
 
