@@ -97,6 +97,11 @@ Computes Prim's minimum spanning tree (MST) algorithm on a tree (edge's costs ca
 
 ----------
 
+<b>running_median.py</b><br>
+Computes the running median of a series of numbers in O(Log(n)) time, which is the most efficient algorithm.<br>
+
+----------
+
 <b>traveling_salesman.py</b><br>
 Computes the shortest path between all nodes of a connected graph starting at one particular node and returning at that same node (connected = there is a path between every pair of nodes).<br>
 (implementation with dynamic programming algorithm)
