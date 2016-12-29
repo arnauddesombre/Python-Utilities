@@ -1,8 +1,8 @@
 """
 explore a graph using Breadth First Search (BFS)
 
-return a dictionary containing the visit order
-of each node starting at visited[source] = 1
+return a dictionary containing the visiting order
+for each node starting at visited[source] = 1
 """
 
 def BFS(graph, source):

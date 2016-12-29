@@ -1,8 +1,8 @@
 """
 explore a graph using Depth First Search (DFS)
 
-return a dictionary containing the visit order
-of each node starting at visited[source] = 1
+return a dictionary containing the visiting order
+for each node starting at visited[source] = 1
 """
 import sys
 sys.setrecursionlimit(1000000)
