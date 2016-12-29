@@ -43,6 +43,22 @@ Return:
 
 ----------
 
+<b>BFS.py</b><br>
+explore a graph using Breadth First Search (BFS).<br>
+
+Return:
+- return a dictionary containing the visiting order<br>
+
+----------
+
+<b>DFS.py</b><br>
+explore a graph using Depth First Search (DFS).<br>
+
+Return:
+- return a dictionary containing the visiting order<br>
+
+----------
+
 <b>dijkstra - heap - show path.py</b><br>
 Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths using Dijkstra's algorithm.<br>
 /!\ all distances must be >= 0<br>
