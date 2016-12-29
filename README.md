@@ -20,7 +20,7 @@ Return:
 ----------
 
 <b>arithmetic.py</b><br>
-Contains the following arithmetic functions:<br>
+Contain the following arithmetic functions:<br>
 - is_prime(n): return boolean indicating if n is prime
 - gcd(a, b): return greatest common divisor of a and b
 - gcdm(*args): return gcd of args
