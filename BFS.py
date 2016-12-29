@@ -6,14 +6,12 @@ for each node starting at visited[source] = 1
 """
 
 def BFS(graph, source):
-    queue = []
-    queue.append([source])
     count = 0
+    queue = [source]
     visited = {source:count}
     while queue:
         count += 1
-        node = queue.pop(0)[0]
-        visited[node] = count
+        node = queue.pop(0)
         visited[node] = count
         for adjacent in graph[node]:
             if adjacent not in visited:
