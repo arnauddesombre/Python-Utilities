@@ -47,7 +47,7 @@ Return:
 Explore a graph using Breadth First Search (BFS).<br>
 
 Return:
-- return a dictionary containing the visiting order<br>
+- a dictionary containing the visiting order for each node<br>
 
 ----------
 
@@ -55,7 +55,7 @@ Return:
 Explore a graph using Depth First Search (DFS).<br>
 
 Return:
-- return a dictionary containing the visiting order<br>
+- a dictionary containing the visiting order for each node<br>
 
 ----------
 
