@@ -44,7 +44,7 @@ Return:
 ----------
 
 <b>BFS.py</b><br>
-explore a graph using Breadth First Search (BFS).<br>
+Explore a graph using Breadth First Search (BFS).<br>
 
 Return:
 - return a dictionary containing the visiting order<br>
@@ -52,7 +52,7 @@ Return:
 ----------
 
 <b>DFS.py</b><br>
-explore a graph using Depth First Search (DFS).<br>
+Explore a graph using Depth First Search (DFS).<br>
 
 Return:
 - return a dictionary containing the visiting order<br>
