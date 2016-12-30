@@ -9,14 +9,10 @@ sys.setrecursionlimit(1000000)
 
 def DFS(graph, source, count=0, visited={}):
     count += 1
-    if source not in visited:
-        visited[source] = 0
     visited[source] = count
     for node in graph[source]:
         if node not in visited:
-            visited[node] = 0
-        if visited[node] == 0:
-            DFS(graph, node, count, visited)
+            visited = DFS(graph, node, count, visited)
     return visited
 
 
