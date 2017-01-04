@@ -53,13 +53,13 @@ Return:
 
 <b>DFS.py</b><br>
 Explore a graph using Depth First Search (DFS).<br>
-implements:<br>
+Implements:<br>
 - DFS_recursive(graph, source): a recursive algorithm<br>
 - DFS_linear(graph, source): a linear algorithm<br>
 - DFS(graph, source, rec=False): which calls one or the other (default: 'rec')<br>
 
 Return:
-- 2 dictionaries containing the visiting order (pre_visit & post_visit) for each node starting at 1<br>
+- 2 dictionaries containing the visiting orders (pre_visit & post_visit) for each node starting at 1<br>
 
 ----------
 
