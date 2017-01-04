@@ -125,7 +125,7 @@ Computes the shortest path between all nodes of a connected graph starting at on
 ----------
 
 <b>SCC.py</b><br>
-Strongly Connected Components<br>
+Strongly Connected Components (SCC)<br>
 Compute the SCC of a directed graph using the Kosaraju's algorithm<br>
 
 return:
