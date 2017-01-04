@@ -47,15 +47,19 @@ Return:
 Explore a graph using Breadth First Search (BFS).<br>
 
 Return:
-- a dictionary containing the visiting order for each node<br>
+- a dictionary containing the visiting order for each node starting at 1<br>
 
 ----------
 
 <b>DFS.py</b><br>
 Explore a graph using Depth First Search (DFS).<br>
+implements:<br>
+- DFS_recursive(graph, source): a recursive algorithm<br>
+- DFS_linear(graph, source): a linear algorithm<br>
+- DFS(graph, source, rec=False): which calls one or the other (default: 'rec')<br>
 
 Return:
-- a dictionary containing the visiting order for each node<br>
+- 2 dictionaries containing the visiting order (pre_visit & post_visit) for each node starting at 1<br>
 
 ----------
 
