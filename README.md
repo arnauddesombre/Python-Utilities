@@ -118,12 +118,6 @@ Computes the running median of a series of numbers in O(Log(n)) time, which is t
 
 ----------
 
-<b>traveling_salesman.py</b><br>
-Computes the shortest path between all nodes of a connected graph starting at one particular node and returning at that same node (connected = there is a path between every pair of nodes).<br>
-(implementation with dynamic programming algorithm)
-
-----------
-
 <b>SCC.py</b><br>
 Strongly Connected Components (SCC)<br>
 Compute the SCC of a directed graph using the Kosaraju's algorithm<br>
@@ -132,5 +126,11 @@ return:
 - the number of SCC<br>
 - a dictionary SCC1, SCC1[n] = list of all nodes in SCC number 'n'<br>
 - a dictionary SCC2, SCC2[node] = number of the SCC of which 'node' is a member<br>
+
+----------
+
+<b>traveling_salesman.py</b><br>
+Computes the shortest path between all nodes of a connected graph starting at one particular node and returning at that same node (connected = there is a path between every pair of nodes).<br>
+(implementation with dynamic programming algorithm)
 
 ----------
