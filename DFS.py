@@ -56,45 +56,66 @@ def DFS_recursive(graph, source, first_time=True):
 def DFS_linear(graph, source):
     # linear DFS
     init()
-    for node in graph:
-        if node in post_visit:
-            continue
-        previsit(node)
-        stack = [(node, graph[node].__iter__())]
-        while stack:
-            x, iterator = stack.pop()
-            try:
-                y = next(iterator)
-                stack.append((x, iterator))
-                if y in pre_visit or y in post_visit:
-                    continue
+    previsit(source)
+    stack = [(source, graph[source].__iter__())]
+    while stack:
+        x, iterator = stack.pop()
+        try:
+            y = next(iterator)
+            stack.append((x, iterator))
+            if y not in pre_visit:
                 previsit(y)
                 stack.append((y, graph[y].__iter__()))
-            except StopIteration:
-                postvisit(x)
+        except StopIteration:
+            postvisit(x)
     return pre_visit, post_visit
 
-
 ############################
-#        E
-#       / \
-#     1/   \2
-#     D--3--C
-#     |     |
-#     2     3
-#     |     |
-#     A--1--B
+#       1   2   3
+#        \ / \ /
+#    12---A---B----4
+#        / \ / \
+#  11---F---X---C---5
+#        \ / \ /
+#    10---E---D---6
+#        / \ / \
+#       9   8   7---F1---F2
 #
+# all distances are equal to 1
 
 if __name__ == "__main__":
     
-    nodes = set(['A', 'B', 'C', 'D', 'E'])
-    graph = {'A': {'B':1, 'D':2},
-             'B': {'A':1, 'C':3},
-             'C': {'B':3, 'D':3, 'E':2},
-             'D': {'A':2, 'C':3, 'E':1},
-             'E': {'C':2, 'D':1}}
+    nodes = set(['X', 'A', 'B', 'C', 'D', 'E', 'F', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', "F1", "F2"])
+    graph = {'X':  {'A':1, 'B':1, 'C':1,  'D':1, 'E':1,  'F':1},
+             'A':  {'1':1, '2':1, 'B':1,  'X':1, 'F':1, '12':1},
+             'B':  {'2':1, '3':1, '4':1,  'C':1, 'X':1,  'A':1},
+             'C':  {'B':1, '5':1, 'D':1,  'X':1},
+             'D':  {'X':1, 'C':1, '6':1,  '7':1, '8':1,  'E':1},
+             'E':  {'F':1, 'X':1, 'D':1,  '8':1, '9':1, '10':1},
+             'F':  {'A':1, 'X':1, 'E':1, '11':1},
+             '1':  {'A':1},
+             '2':  {'A':1, 'B':1},
+             '3':  {'B':1},
+             '4':  {'B':1},
+             '5':  {'C':1},
+             '6':  {'D':1},
+             '7':  {'D':1, 'F1':1},
+             '8':  {'D':1, 'E':1},
+             '9':  {'E':1},
+             '10': {'E':1},
+             '11': {'F':1},
+             '12': {'A':1},
+             'F1': {'7':1, 'F2':1},
+             'F2': {'F2':1}}
 
-    print DFS(graph, 'A')
-    print DFS_recursive(graph, 'A')
-    print DFS_linear(graph, 'A')
+    x1 = DFS(graph, 'X')
+    x2 = DFS_recursive(graph, 'X')
+    x3 = DFS_linear(graph, 'X')
+    print x1[0]
+    print x2[0]
+    print x3[0]
+    print
+    print x1[1]
+    print x2[1]
+    print x3[1]
+

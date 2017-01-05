@@ -9,24 +9,16 @@ return:
 - a dictionary SCC2, SCC2[node] = number of the SCC of which 'node' is a member
 """
 
-# recursion will crash for large graphs
-recursive = False
-
-import sys
-sys.setrecursionlimit(500000)
-
 def init():
-    global clock, pre, post, pre_node, post_node, revgraph
+    global clock, pre, post, post_node
     clock = 0
     pre = {}
     post = {}
-    pre_node = {}
     post_node = {}
-    revgraph = {}
 
 def previsit(node):
-    global clock, pre, pre_node
-    pre[node] = True   # any value (not necessary for Kosaraju)
+    global pre
+    pre[node] = True
 
 def postvisit(node):
     global clock, post, post_node
@@ -34,27 +26,14 @@ def postvisit(node):
     post[node] = clock
     post_node[clock] = node
 
-def explore(source):
-    if recursive:
-        explore_recursive(source)
-    else:
-        explore_linear(source)
-
-def explore_recursive(source):
-    # recursive DFS
-    previsit(source)
-    for node in revgraph[source]:
-        if node not in pre:
-            explore(node)
-    postvisit(source)
-
-def explore_linear(source):
+def explore(graph):
     # linear DFS
-    for node in revgraph:
+    # (recursive would crash for large graphs)
+    for node in graph:
         if node in post:
             continue
         previsit(node)
-        stack = [(node, revgraph[node].__iter__())]
+        stack = [(node, graph[node].__iter__())]
         while stack:
             x, iterator = stack.pop()
             try:
@@ -63,7 +42,7 @@ def explore_linear(source):
                 if y in pre or y in post:
                     continue
                 previsit(y)
-                stack.append((y, revgraph[y].__iter__()))
+                stack.append((y, graph[y].__iter__()))
             except StopIteration:
                 postvisit(x)
 
@@ -77,44 +56,32 @@ def reverse(nodes, graph):
     return rev
 
 def BFS(graph, source, largest_post):
-    # return list of nodes discoverable from source
+    # return list of nodes discoverable from 'source'
     queue = [source]
     visited = set()
     while queue:
         node = queue.pop()
         visited.add(node)
-        for adjacent in graph[node]:
+        for adjacent in set(graph[node]) - visited:
             if post[adjacent] < largest_post:
-                if adjacent not in visited:
-                    queue.append(adjacent)
+                queue.append(adjacent)
     return list(visited)
 
 def SCC(nodes, graph):
     """
     Algorithm for SCCs(G):
-    Run DFS on reverse graph (revgraph)
+    Run DFS on reverse graph
     for v in V in reverse postorder:
         if not visited(v):
             Explore(v)
             mark visited vertices as new SCC
     """
-    global revgraph
     init()
 
     # DFS on reverse of graph
-    revgraph = reverse(nodes, graph)
-    source = graph.keys()[0]
-    missing = True
-    while missing:
-        explore(source)
-        missing = False
-        for node in nodes:
-            if node not in post:
-                missing = True
-                source = node
-                break
+    explore(reverse(nodes, graph))
 
-    # explore graph starting with the largest post number value
+    # explore graph starting with the largest post number value in reverse graph
     scc = 0   # number of SCC
     SCC1 = {} # SCC1[n] = list of all nodes in SCC number 'n'
     SCC2 = {} # SCC2[node] = number of the SCC of which 'node' is a member
