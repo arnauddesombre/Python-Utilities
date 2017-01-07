@@ -48,7 +48,7 @@ bellman_ford_path(parents, source, destination) will return the path (a list) fr
 
 ----------
 
-<b>BFS.py</b><br>
+<b>bfs.py</b><br>
 Explore a graph using Breadth First Search (BFS).<br>
 
 Return:
@@ -56,7 +56,7 @@ Return:
 
 ----------
 
-<b>DFS.py</b><br>
+<b>dfs.py</b><br>
 Explore a graph using Depth First Search (DFS).<br>
 Implements:<br>
 - DFS_recursive(graph, source): a recursive algorithm<br>
@@ -132,7 +132,7 @@ Computes the running median of a series of numbers in O(Log(n)) time, which is t
 
 ----------
 
-<b>SCC.py</b><br>
+<b>scc.py</b><br>
 Strongly Connected Components (SCC)<br>
 Compute the SCC of a directed graph using the Kosaraju's algorithm<br>
 
