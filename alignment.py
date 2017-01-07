@@ -51,17 +51,19 @@ def align(string1, string2):
 
 ############################
 
-string1 = "AGAATCTAGACTGAATTCGCG"
-string2 = "AGTACTGAACTTAGGATTTACG"
+if __name__ == "__main__":
+    
+    string1 = "AGAATCTAGACTGAATTCGCG"
+    string2 = "AGTACTGAACTTAGGATTTACG"
 
-a = align(string1, string2)
+    a = align(string1, string2)
 
-print
-print string1
-print string2
-print
-print a[0]
-print a[1]
-print
-print "cost =", a[2]
-print
+    print
+    print string1
+    print string2
+    print
+    print a[0]
+    print a[1]
+    print
+    print "cost =", a[2]
+    print

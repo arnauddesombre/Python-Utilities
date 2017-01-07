@@ -52,16 +52,18 @@ def dijkstra_path(parents, source, destination):
 #     A--1--B
 #
 
-nodes = set(['A', 'B', 'C', 'D', 'E'])
-graph = {'A': {'B':1, 'D':2},
-         'B': {'A':1, 'C':3},
-         'C': {'B':3, 'D':3, 'E':2},
-         'D': {'A':2, 'C':3, 'E':1},
-         'E': {'C':2, 'D':1}}
+if __name__ == "__main__":
+    
+    nodes = set(['A', 'B', 'C', 'D', 'E'])
+    graph = {'A': {'B':1, 'D':2},
+             'B': {'A':1, 'C':3},
+             'C': {'B':3, 'D':3, 'E':2},
+             'D': {'A':2, 'C':3, 'E':1},
+             'E': {'C':2, 'D':1}}
 
-A, parents = dijkstra(graph, 'A')
+    A, parents = dijkstra(graph, 'A')
 
-print A
-print
-print dijkstra_path(parents, 'A', 'C')
-print
+    print A
+    print
+    print dijkstra_path(parents, 'A', 'C')
+    print

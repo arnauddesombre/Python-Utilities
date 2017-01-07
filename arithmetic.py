@@ -97,23 +97,25 @@ def factors(n):
 
 ############################
 
-print
-print gcdm(10, 20, 30, 45)
-print lcmm(10, 20, 30, 45)
-print
-tocalc =  2**59 - 1
-print("%s = %s" % (tocalc, prime_decomposition(tocalc)))
-tocalc =  100
-print("%s = %s" % (tocalc, prime_decomposition(tocalc)))
-print
-print factors(12345678)
+if __name__ == "__main__":
+    
+    print
+    print gcdm(10, 20, 30, 45)
+    print lcmm(10, 20, 30, 45)
+    print
+    tocalc =  2**59 - 1
+    print("%s = %s" % (tocalc, prime_decomposition(tocalc)))
+    tocalc =  100
+    print("%s = %s" % (tocalc, prime_decomposition(tocalc)))
+    print
+    print factors(12345678)
 
-# some prime numbers from:
-# https://en.wikipedia.org/wiki/List_of_prime_numbers
-print
-print is_prime(17)
-print is_prime(999331)
-print is_prime(2147483647)
-print is_prime(63018038201)
-print is_prime(3093215881333057)
-print
+    # some prime numbers from:
+    # https://en.wikipedia.org/wiki/List_of_prime_numbers
+    print
+    print is_prime(17)
+    print is_prime(999331)
+    print is_prime(2147483647)
+    print is_prime(63018038201)
+    print is_prime(3093215881333057)
+    print

@@ -96,10 +96,11 @@ class Median:
 
 ############################
 
+if __name__ == "__main__":
+    
+    value = [0, 1, 5, 3, 4, 9, 8]
 
-value = [0, 1, 5, 3, 4, 9, 8]
-
-median = Median()
-for x in value:
-    median.add(x)
-    print x, "   ", median.median()
+    median = Median()
+    for x in value:
+        median.add(x)
+        print x, "   ", median.median()

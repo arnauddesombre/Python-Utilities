@@ -53,15 +53,17 @@ def find_path(start, end, path=[]):
 #     A--1--B
 #
 
-nodes = set(['A', 'B', 'C', 'D', 'E'])
-graph = {'A': {'B':1, 'D':2},
-         'B': {'A':1, 'C':2},
-         'C': {'B':2, 'D':3, 'E':4},
-         'D': {'A':2, 'C':3, 'E':4},
-         'E': {'C':4, 'D':4}}
+if __name__ == "__main__":
+    
+    nodes = set(['A', 'B', 'C', 'D', 'E'])
+    graph = {'A': {'B':1, 'D':2},
+             'B': {'A':1, 'C':2},
+             'C': {'B':2, 'D':3, 'E':4},
+             'D': {'A':2, 'C':3, 'E':4},
+             'E': {'C':4, 'D':4}}
 
-print
-print find_all_paths('A', 'E')
-print
-print find_path('A', 'E')
-print
+    print
+    print find_all_paths('A', 'E')
+    print
+    print find_path('A', 'E')
+    print

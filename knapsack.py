@@ -67,27 +67,29 @@ def knapsack2(W):
 # weight[0] = 0 (unused)
 # len(weight) = len(weight) = numberItem + 1
 
-sizeKnapsack, numberItem = 6, 4
-value  = [0, 3, 2, 4, 4]
-weight = [0, 4, 3, 2, 3]
+if __name__ == "__main__":
+    
+    sizeKnapsack, numberItem = 6, 4
+    value  = [0, 3, 2, 4, 4]
+    weight = [0, 4, 3, 2, 3]
 
-# recursive algorithm
-############################
-print
-print knapsack1(sizeKnapsack)
-# retrieve list of item
-item = []
-w = sizeKnapsack
-for i in range(numberItem, 0, -1):
-    if i-1 in A and A[i][w] != A[i-1][w]:
-        item.append(i)
-        w -= weight[i]
-print item
+    # recursive algorithm
+    ############################
+    print
+    print knapsack1(sizeKnapsack)
+    # retrieve list of item
+    item = []
+    w = sizeKnapsack
+    for i in range(numberItem, 0, -1):
+        if i-1 in A and A[i][w] != A[i-1][w]:
+            item.append(i)
+            w -= weight[i]
+    print item
 
-# dynamic programming algorithm
-############################
-print
-A, item = knapsack2(sizeKnapsack)
-print A
-print item
-print
+    # dynamic programming algorithm
+    ############################
+    print
+    A, item = knapsack2(sizeKnapsack)
+    print A
+    print item
+    print
