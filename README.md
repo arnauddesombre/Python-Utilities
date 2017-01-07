@@ -39,8 +39,12 @@ Compute all shortest distances from source to all points in graph as well as the
 Return:
 - shortest distances<br>
 - shortest path parents dictionary<br>
-- generates an error if a negative cycle exists<br>
+- if a negative cycle exists<br>
 
+negative_cycle(graph, source) will return a list containing one negative cycle (note there can be multiple negative cycles). The first
+and last element of the list are the same ([A, B, ... , A])
+
+bellman_ford_path(parents, source, destination) will return the path (a list) from 'source' to 'destination'. Note that if there is a negative loop, this function will run indefinitely
 ----------
 
 <b>BFS.py</b><br>
@@ -56,7 +60,7 @@ Explore a graph using Depth First Search (DFS).<br>
 Implements:<br>
 - DFS_recursive(graph, source): a recursive algorithm<br>
 - DFS_linear(graph, source): a linear algorithm<br>
-- DFS(graph, source, rec=False): which calls one or the other (default: 'rec')<br>
+- DFS(graph, source, recursive=False): which calls one or the other<br>
 
 Return:
 - 2 dictionaries containing the visiting orders (pre_visit & post_visit) for each node starting at 1<br>
