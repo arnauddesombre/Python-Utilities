@@ -7,10 +7,14 @@ In Python 2 but easily portable to Python 3 (change `xrange(...)` to `range(...)
 
 Tip to import a homemade method in another .py program:
 
-`import imp<br>
-BF = imp.load_source("bellman_ford", "C:/.../bellman_ford.py")<br>
-...<br>
-x = BF.bellman_ford(graph, node)<br>`
+```
+# import function bellman_ford() from C:/temp/bellman_ford.py
+
+import imp
+BF = imp.load_source("bellman_ford", "C:/temp/bellman_ford.py")
+...
+x = BF.bellman_ford(graph, node)
+```
 
 ----------
 
