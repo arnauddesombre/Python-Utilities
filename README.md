@@ -112,6 +112,11 @@ Knapsack algorithm (Given a set of items, each with a weight and a value, determ
 
 ----------
 
+<b>kruskal.py</b><br>
+Computes Kruskal's minimum spanning tree (MST) algorithm on a tree (edge's costs can be negative).<br>
+
+----------
+
 <b>prim.py</b><br>
 Computes Prim's minimum spanning tree (MST) algorithm on a tree (edge's costs can be negative).<br>
 
