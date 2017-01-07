@@ -45,6 +45,7 @@ negative_cycle(graph, source) will return a list containing one negative cycle (
 and last element of the list are the same ([A, B, ... , A])
 
 bellman_ford_path(parents, source, destination) will return the path (a list) from 'source' to 'destination'. Note that if there is a negative loop, this function will run indefinitely
+
 ----------
 
 <b>BFS.py</b><br>
