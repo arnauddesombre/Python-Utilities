@@ -2,7 +2,15 @@
 My Python 2 utility programs
 
 Each program in this repository is a stand-alone file.<br>
-In Python 2 but easily portable to Python 3 (change <i>xrange(...)</i> to <i>range(...)</i> and <i>print ...</i> to <i>print(...)</i>).
+In Python 2 but easily portable to Python 3 (change `xrange(...)` to `range(...)` and `print ...` to `print(...)`).
+
+
+Tip to import a homemade method in another .py program:
+
+`import imp
+BF = imp.load_source("bellman_ford", "C:/.../bellman_ford.py")
+...
+x = BF.bellman_ford(graph, node)`
 
 ----------
 
