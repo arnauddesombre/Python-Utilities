@@ -6,12 +6,14 @@ In Python 2 but easily portable to Python 3 (change `xrange(...)` to `range(...)
 
 
 Tip to import a homemade method in another python program:
-```# import function bellman_ford() from C:/temp/bellman_ford.py
+```
+# import function bellman_ford() from C:/temp/bellman_ford.py
 
 import imp
 BF = imp.load_source("bellman_ford", "C:/temp/bellman_ford.py")
 ...
-x = BF.bellman_ford(graph, node)```
+x = BF.bellman_ford(graph, node)
+```
 
 ----------
 
