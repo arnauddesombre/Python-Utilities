@@ -5,14 +5,13 @@ Each program in this repository is a stand-alone file.<br>
 In Python 2 but easily portable to Python 3 (change `xrange(...)` to `range(...)` and `print ...` to `print(...)`).
 
 
-Tip to import a homemade method in another python program:```
-# import function bellman_ford() from C:/temp/bellman_ford.py
+Tip to import a homemade method in another python program:
+```# import function bellman_ford() from C:/temp/bellman_ford.py
 
 import imp
 BF = imp.load_source("bellman_ford", "C:/temp/bellman_ford.py")
 ...
-x = BF.bellman_ford(graph, node)
-```
+x = BF.bellman_ford(graph, node)```
 
 ----------
 
