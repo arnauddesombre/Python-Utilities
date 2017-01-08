@@ -43,7 +43,7 @@ Contain the following arithmetic functions:<br>
 ----------
 
 <b>bellman_ford.py</b><br>
-Compute all shortest distances from source to all points in a directed graph as well as the shortest corresponding paths using the Bellman-Ford algorithm.<br>
+Compute all shortest distances from a source to all points in a directed graph as well as the shortest corresponding paths using the Bellman-Ford algorithm.<br>
 /!\ distances can be < 0<br>
 /!\ no negative cycle can exist in the tree<br>
 
