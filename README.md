@@ -19,7 +19,7 @@ x = BF.bellman_ford(graph, node)
 
 <b>alignment.py</b><br>
 Sequence alignment: align 2 strings minimizing substitution and insertion cost.<br>
-Parameters:
+Optional parameters:
 - penalty for substitution<br>
 - penalty for gap insertion<br>
 
@@ -43,14 +43,14 @@ Contain the following arithmetic functions:<br>
 ----------
 
 <b>bellman_ford.py</b><br>
-Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths using the Bellman-Ford algorithm.<br>
+Compute all shortest distances from source to all points in a directed graph as well as the shortest corresponding paths using the Bellman-Ford algorithm.<br>
 /!\ distances can be < 0<br>
 /!\ no negative cycle can exist in the tree<br>
 
 Return:
 - shortest distances<br>
 - shortest path parents dictionary<br>
-- if a negative cycle exists<br>
+- boolean indicating if a negative cycle exists<br>
 
 negative_cycle(graph, source) will return a list containing one negative cycle (note there can be multiple negative cycles). The first
 and last element of the list are the same ([A, B, ... , A])
@@ -60,15 +60,24 @@ bellman_ford_path(parents, source, destination) will return the path (a list) fr
 ----------
 
 <b>bfs.py</b><br>
-Explore a graph using Breadth First Search (BFS).<br>
+Explore a directed graph using Breadth First Search (BFS).<br>
 
 Return:
 - a dictionary containing the visiting order for each node starting at 1<br>
 
 ----------
 
+<b>clustering.py</b><br>
+Compute k clusters from an undirected graph, using Kruskal's MST (minimum spanning tree) algorithm, so that the minimum distance between 2 nodes in different clusters is maximized.
+
+Return:
+- a dictionary of integer keys 1 to k containing the list of nodes of each cluster<br>
+- the minimum distance between the k clusters<br>
+
+----------
+
 <b>dfs.py</b><br>
-Explore a graph using Depth First Search (DFS).<br>
+Explore a directed graph using Depth First Search (DFS).<br>
 Implements:<br>
 - DFS_recursive(graph, source): a recursive algorithm<br>
 - DFS_linear(graph, source): a linear algorithm<br>
@@ -80,7 +89,7 @@ Return:
 ----------
 
 <b>dijkstra - heap - show path.py</b><br>
-Compute all shortest distances from source to all points in graph as well as the shortest corresponding paths using Dijkstra's algorithm.<br>
+Compute all shortest distances from a source to all nodes in a directed graph as well as the shortest corresponding paths using Dijkstra's algorithm.<br>
 /!\ all distances must be >= 0<br>
 (implementation using heap)<br>
 
@@ -91,7 +100,7 @@ Return:
 ----------
 
 <b>dijkstra - heap.py</b><br>
-Compute all shortest distances from source to all points in graph using Dijkstra's algorithm.<br>
+Compute all shortest distances from a source to all nodes in a directed graph using Dijkstra's algorithm.<br>
 /!\ all distances must be >= 0<br>
 (implementation using heap)<br>
 
@@ -101,7 +110,7 @@ Return:
 ----------
 
 <b>dijkstra - no heap.py</b><br>
-Compute all shortest distances from source to all points in graph using Dijkstra's algorithm.<br>
+Compute all shortest distances from a source to all nodes in a directed graph using Dijkstra's algorithm.<br>
 /!\ all distances must be >= 0<br>
 (plain implementation)<br>
 
@@ -111,7 +120,7 @@ Return:
 ----------
 
 <b>find_all_paths.py</b><br>
-Find all simple paths (no loop) in a graph starting from a specified node by brute recursive enumeration.<br>
+Find all simple paths (no loop) in a directed graph starting from a specified node by brute recursive enumeration.<br>
 Variant implemented: find only one.<br>
 
 ----------
@@ -129,12 +138,12 @@ Knapsack algorithm (Given a set of items, each with a weight and a value, determ
 ----------
 
 <b>kruskal.py</b><br>
-Computes Kruskal's minimum spanning tree (MST) algorithm on a tree (edge's costs can be negative).<br>
+Computes Kruskal's minimum spanning tree (MST) algorithm of an undirected graph (edge's costs can be negative).<br>
 
 ----------
 
 <b>prim.py</b><br>
-Computes Prim's minimum spanning tree (MST) algorithm on a tree (edge's costs can be negative).<br>
+Computes Prim's minimum spanning tree (MST) algorithm of an undirected graph (edge's costs can be negative).<br>
 
 ----------
 
