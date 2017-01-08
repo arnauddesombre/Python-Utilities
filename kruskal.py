@@ -8,9 +8,6 @@ if graph[from][to] = dist, it is assumed that graph[to]from] = dist as well
 therefore in the MST, the edge would be [from, to, dist] or [to, from, dits]
 """
 
-import sys
-sys.setrecursionlimit(1000000)
-
 def init():
     global parent, rank
     parent = {}
@@ -22,22 +19,28 @@ def make_set(node):
     rank[node] = 0
 
 def find(node):
-    global parent
-    if parent[node] != node:
-        parent[node] = find(parent[node])
-    return parent[node]
+    if parent[node] == node:
+        return node
+    else:
+        return find(parent[node])
 
 def union(node1, node2):
     global parent, rank
     root1 = find(node1)
     root2 = find(node2)
     if root1 != root2:
+        # Attach smaller rank tree under root of higher rank tree
         if rank[root1] > rank[root2]:
             parent[root2] = root1
-        else:
+        elif rank[root2] > rank[root1]:
             parent[root1] = root2
-            if rank[root1] == rank[root2]:
-                rank[root2] += 1
+        else:
+            # If ranks are same, make one as root and increment its rank by one
+            parent[root1] = root2
+            rank[root2] += 1
+        return True
+    else:
+        return False
 
 def kruskal(nodes, graph):
     """
@@ -51,8 +54,7 @@ def kruskal(nodes, graph):
     for node in nodes:
         make_set(node)
     for length, u, v in edges:
-        if find(u) != find(v):
-            union(u, v)
+        if union(u, v):
             mst.append((u, v, length))
     return mst
 
