@@ -15,15 +15,15 @@ def prim(graph):
     input:   graph   = in dictionary form {from:{to:distance, ...}, ...}
     output:  the MST = list of (head, tail, weight)
     """
-    conn = {}
+    edges = {}
     for n1 in graph:
-        if n1 not in conn:
-            conn[n1] = []
+        if n1 not in edges:
+            edges[n1] = []
         for n2 in graph[n1]:
-            if n2 not in conn:
-                conn[n2] = []
-            conn[n1].append((graph[n1][n2], n1, n2))
-            conn[n2].append((graph[n1][n2], n2, n1))
+            if n2 not in edges:
+                edges[n2] = []
+            edges[n1].append((graph[n1][n2], n1, n2))
+            edges[n2].append((graph[n1][n2], n2, n1))
 
     mst = []
     # node is a random node from the graph
@@ -32,7 +32,7 @@ def prim(graph):
     # as any node would do
     node = random.choice(graph.keys())
     used = {node:True}
-    usable_edges = conn[node][:]
+    usable_edges = edges[node][:]
     heapify(usable_edges)
 
     while usable_edges:
@@ -40,7 +40,7 @@ def prim(graph):
         if n2 not in used:
             used[n2] = True
             mst.append((n1, n2, cost))
-            for e in conn[n2]:
+            for e in edges[n2]:
                 if e[2] not in used:
                     heappush(usable_edges, e)
 
