@@ -77,8 +77,9 @@ def clustering(nodes, graph, k):
         make_set(node)
     for length, u, v in edges:
         if count == k:
-            dist = length
-            break
+            if find(u) != find(v):
+                dist = length
+                break
         if union(u, v):
             count -= 1
     # computes clusters

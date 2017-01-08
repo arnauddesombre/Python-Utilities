@@ -9,10 +9,10 @@ to all points in 'graph' as well as the shortest corresponding paths.
 
 return:
 dist = shortest distances
-dist[node] is the shortest distance from source to node
+dist[node] is the shortest distance from 'source' to 'node'
 parent = shortest path parents dictionary
-parent[node] is the parent of node in the shortest path from the given source
-cycle = True if there is a negative cycle, False otherwise
+parent[node] is the parent of 'node' in the shortest path from the given 'source'
+cycle = Boolean, True if there is a negative cycle, False otherwise
 
 if 'cycle' == True, negative_cycle(graph, source) will return a list containing
 one negative cycle (note there can be multiple negative cycles). The first
