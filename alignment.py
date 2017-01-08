@@ -3,8 +3,10 @@ sequence alignment
 align 2 strings minimizing substitution and insertion cost
 
 parameters:
-penalty for substitution
-penalty for gap insertion
+string #1
+string #2
+penalty for substitution (optional, default = 1)
+penalty for gap insertion (optional, default = 1)
 
 return:
 [0] = first string with gap inserted
@@ -12,14 +14,14 @@ return:
 [2] = total substitution and insertion cost
 """
 gap = '_'
-penaltySubstitution = 0.5
-penaltyGap = 1.0
+penaltySubstitution_ = 1.
+penaltyGap_ = 1.
 
 import sys
 sys.setrecursionlimit(1000000)
 
 Dic = {}
-def align(string1, string2):
+def align(string1, string2, penaltySubstitution=penaltySubstitution_, penaltyGap=penaltyGap_):
     if string1 == '':
         s1 = gap * len(string2)
         return [s1, string2, penaltyGap * len(string2)]

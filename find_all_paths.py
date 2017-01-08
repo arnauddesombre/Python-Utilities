@@ -1,7 +1,7 @@
 """
 Find all simple paths (no loop) in a
-graph starting from a specified node
-by brute recursive enumeration
+directed graph starting from a specified
+node by brute recursive enumeration
 
 Variant:
 find only one

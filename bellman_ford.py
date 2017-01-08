@@ -2,7 +2,8 @@
 Bellman-Ford algorithm
 
 bellman_ford(graph, source) compute all shortest distances from 'source'
-to all points in 'graph' as well as the shortest corresponding paths
+to all points in 'graph' as well as the shortest corresponding paths.
+'graph' is a directed graph.
 /!\ distances can be < 0
 /!\ no negative cycle
 

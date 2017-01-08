@@ -1,5 +1,5 @@
 """
-explore a graph using Breadth First Search (BFS)
+explore a directed graph using Breadth First Search (BFS)
 
 return a dictionary containing the visiting order
 for each node starting at visited[source] = 1

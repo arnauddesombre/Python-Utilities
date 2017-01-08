@@ -1,5 +1,5 @@
 """
-compute all shortest distances from source to all points in graph
+compute all shortest distances from a source to all nodes in a directed graph
 /!\ all distances must be >= 0
 
 return:

@@ -1,5 +1,5 @@
 """
-explore a graph using Depth First Search (DFS)
+explore a directed graph using Depth First Search (DFS)
 
 compute dictionaries containing the visiting orders
 (pre_visit & post_visit) for each node starting at 1

@@ -3,7 +3,6 @@ knapsack algorithm
 Value = non-negative
 Weight = non-negative and integral
 Capacity (W) = a non-negative integer
-
 knapsack1:
 recursive algorithm, return sum of values only, but list of item can be retrieved
 knapsack2:
@@ -92,4 +91,4 @@ if __name__ == "__main__":
     A, item = knapsack2(sizeKnapsack)
     print A
     print item
-    print
+print
