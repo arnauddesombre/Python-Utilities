@@ -4,8 +4,8 @@ Prim's MST (minimum spanning tree) algorithm
 costs can be negative
 MST assumes the graph is undirected.
 'graph' is defined as: graph = {from:{to:dist, ...}, ...}
-if graph[from][to] = dist, it is assumed that graph[to]from] = dist as well
-therefore in the MST, the edge would be [from, to, dist] or [to, from, dits]
+if graph[from][to] == dist, it is assumed that graph[to][from] == dist as well
+therefore in the MST, the edge could be [from, to, dist] or [to, from, dist]
 """
 from heapq import heappop, heappush, heapify
 import random
