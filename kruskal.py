@@ -51,11 +51,16 @@ def kruskal(nodes, graph):
     mst = []
     edges = [[graph[u][v], u, v] for u in graph for v in graph[u]]
     edges = sorted(edges, key=lambda x:x[0])
+    count = 0
+    total = len(nodes) - 1
     for node in nodes:
         make_set(node)
     for length, u, v in edges:
         if union(u, v):
             mst.append((u, v, length))
+            count += 1
+            if count == total:
+                break
     return mst
 
 
