@@ -2,7 +2,7 @@
 
 from time import time
 
-# map = N * N square, roads are all verticals and all horizontal lines
+# map = N * N square, roads are all vertical and all horizontal lines
 
 N = 1000
 
@@ -24,8 +24,9 @@ for i in xrange(N):
 print "done"
 
 import imp
-dijkstra = imp.load_source("dijkstra", "dijkstra - heap - show path.py")
-a_star = imp.load_source("a_star", "a-star - heap - show path.py")
+DIR = "D:/Users/ARNAUD/Python/_Program library/"
+dijkstra = imp.load_source("dijkstra", DIR + "dijkstra - heap - show path.py")
+a_star = imp.load_source("a_star", DIR + "a-star - heap - show path.py")
 
 source = (N/4,N/4)
 destination = (3*N/4, 3*N/4)

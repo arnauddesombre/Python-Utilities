@@ -1,10 +1,10 @@
 """
-compute the shortest distances from a source to a destination
-in a directed graph
+compute the shortest distance from a source to a destination
+in a directed graph where some crow distance (Euclid) can be defined
 /!\ all distances must be >= 0
 
 return:
-dist = shortest distance length of shortest path)
+dist = shortest distance (length of shortest path)
 parent = shortest path parents dictionary
 parent[node] is the parent of node in the shortest path from source to destination
 """
