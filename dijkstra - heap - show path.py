@@ -59,11 +59,14 @@ if __name__ == "__main__":
              'B': {'A':1, 'C':3},
              'C': {'B':3, 'D':3, 'E':2},
              'D': {'A':2, 'C':3, 'E':1},
-             'E': {'C':2, 'D':1}}
+             'E': {'C':1, 'D':1}}
 
     A, parents = dijkstra(graph, 'A')
 
     print A
     print
-    print dijkstra_path(parents, 'A', 'C')
+    source = 'A'
+    destination = 'C'
+    print A[destination]
+    print dijkstra_path(parents, source, destination)
     print
