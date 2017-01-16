@@ -1,10 +1,11 @@
 """
 compute the shortest distance from a source to a destination
-in a directed graph where some crow distance (Euclid) can be defined
+in a directed graph where some crow distance (Euclid) can be
+defined as well as the shortest corresponding path
 /!\ all distances must be >= 0
 
 return:
-dist = shortest distance (length of shortest path)
+distance = length of shortest path
 parent = shortest path parents dictionary
 parent[node] is the parent of node in the shortest path from source to destination
 """
@@ -18,23 +19,24 @@ def euclid(x, y):
     return sqrt((x[0] - y[0]) ** 2 + (x[1] - y[1]) ** 2)
 
 def a_star(nodes, graph, source, destination):
-    dist = {}
+    visited = {}
     parents = {}
     estimate = euclid(nodes[source], nodes[destination])
     queue = [(estimate, 0, source, None)]
+    distance = float("inf")
     while queue:
         path_estimate, path_len, v, parent = heappop(queue)
-        if v not in dist: # v is not visited
-            dist[v] = path_len
+        if v not in visited:
             parents[v] = parent
             if v == destination:
+                distance = path_len
                 break
             for w, edge_len in graph[v].items():
-                if w not in dist:
+                if w not in visited:
                     d = path_len + edge_len
                     estimate = d + euclid(nodes[w], nodes[destination])
                     heappush(queue, (estimate, d, w, v))
-    return dist[destination], parents
+    return distance, parents
 
 def a_star_path(parents, source, destination):
     node = destination
