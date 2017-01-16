@@ -4,10 +4,12 @@ a directed graph as well as the shortest corresponding paths
 /!\ all distances must be >= 0
 
 return:
-A = shortest distances
-A[node] is the shortest distance from source to node
-parent = shortest path parents dictionary
-parent[node] is the parent of node in the shortest path from the given source
+if destination not sprcified:
+  A = shortest distances; A[node] is the shortest distance from source to node
+  parent = shortest path parents dictionary; parent[node] is the parent of node in the shortest path from the given source
+if destination specified:
+  shortest distance
+  shortest path
 """
 from heapq import heappush, heappop
 
@@ -27,7 +29,15 @@ def dijkstra(graph, source, destination=None):
             for w, edge_len in graph[v].items():
                 if w not in A:
                     heappush(queue, (path_len + edge_len, w, v))
-    return A, parents
+    if destination == None:
+        # return all distances & parents dictionary
+        return A, parents
+    else:
+        # only distance to 'destination' is correct
+        if destination in A:
+            return A[destination], dijkstra_path(parents, source, destination)
+        else:
+            return float("inf"), []
 
 def dijkstra_path(parents, source, destination):
     node = destination

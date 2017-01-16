@@ -22,7 +22,16 @@ def dijkstra(graph, source, destination=None):
             for w, edge_len in graph[v].items():
                 if w not in A:
                     heappush(queue, (path_len + edge_len, w))
-    return A
+    if destination == None:
+        # return all distances
+        return A
+    else:
+        # only distance to 'destination' is correct
+        if destination in A:
+            return A[destination]
+        else:
+            return float("inf")
+        
 
 
 ############################

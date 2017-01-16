@@ -6,8 +6,7 @@ defined as well as the shortest corresponding path
 
 return:
 distance = length of shortest path
-parent = shortest path parents dictionary
-parent[node] is the parent of node in the shortest path from source to destination
+path = shortest path between source and destination
 """
 from heapq import heappush, heappop
 from math import sqrt
@@ -27,6 +26,7 @@ def a_star(nodes, graph, source, destination):
     while queue:
         path_estimate, path_len, v, parent = heappop(queue)
         if v not in visited:
+            visited[v] = True
             parents[v] = parent
             if v == destination:
                 distance = path_len
@@ -36,7 +36,7 @@ def a_star(nodes, graph, source, destination):
                     d = path_len + edge_len
                     estimate = d + euclid(nodes[w], nodes[destination])
                     heappush(queue, (estimate, d, w, v))
-    return distance, parents
+    return distance, a_star_path(parents, source, destination) if distance < float("inf") else []
 
 def a_star_path(parents, source, destination):
     node = destination
@@ -76,8 +76,8 @@ if __name__ == "__main__":
 
     source = 'A'
     destination = 'C'
-    dist, parents = a_star(nodes, graph, source, destination)
+    dist, path = a_star(nodes, graph, source, destination)
 
     print "distance =", dist
-    print "path     =", a_star_path(parents, source, destination)
+    print "path     =", path
     print

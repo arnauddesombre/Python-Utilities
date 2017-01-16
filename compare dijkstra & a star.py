@@ -2,7 +2,7 @@ from time import time
 
 import imp
 # path to the python utility directory
-DIR = "C:/Python/Utility/"
+DIR = "D:/Users/ARNAUD/Python/_Program library/"
 
 # map = N * N square, roads are all vertical and all horizontal lines
 
@@ -29,14 +29,14 @@ print "done"
 source = (N/4, N/4)
 destination = (3*N/4, 3*N/4)
 print
-print "computing distance from ", source, "to", destination
+print "computing distance from", source, "to", destination
 
 print
 print "Dijkstra - show path"
 dijkstra = imp.load_source("dijkstra", DIR + "dijkstra - show path.py")
 t0 = time()
 dist, parents = dijkstra.dijkstra(graph, source, destination)
-print "distance =", dist[destination]
+print "distance =", dist
 print "time     =", time() - t0
 
 print
@@ -44,7 +44,18 @@ print "Dijkstra"
 dijkstra = imp.load_source("dijkstra", DIR + "dijkstra.py")
 t0 = time()
 dist = dijkstra.dijkstra(graph, source, destination)
-print "distance =", dist[destination]
+print "distance =", dist
+print "time     =", time() - t0
+
+print
+print "bidirectional Dijkstra - show path"
+dijkstra = imp.load_source("bi_dijkstra", DIR + "bidirectional dijkstra - show path.py")
+t0 = time()
+graph_rev = dijkstra.reverse(nodes, graph)
+print "reversing graph in time =", time() - t0
+t0 = time()
+dist, path = dijkstra.bi_dijkstra(nodes, graph, source, destination, graph_rev)
+print "distance =", dist
 print "time     =", time() - t0
 
 print
@@ -63,21 +74,26 @@ BF = bellman_ford.bellman_ford(graph, source)
 print "distance =", BF[0][destination]
 print "time     =", time() - t0
 
+
 """
 N = 100
-computing distance from  (25, 25) to (75, 75)
+computing distance from (25, 25) to (75, 75)
 
 Dijkstra - show path
-time     = 0.038
+time     = 0.039
 
 Dijkstra
-time     = 0.037
+time     = 0.036
+
+bidirectional Dijkstra - show path
+reversing graph in time = 0.022
+time     = 0.035
 
 A star
-time     = 0.024
+time     = 0.022
 
 Bellman-Ford
-time     = 1.149
+time     = 1.213
 
 --------
 
@@ -85,14 +101,18 @@ N = 1000
 computing distance from  (250, 250) to (750, 750)
 
 Dijkstra - show path
-time     = 5.504
+time     = 5.393
 
 Dijkstra
 time     = 5.394
 
+bidirectional Dijkstra - show path
+reversing graph in time = 4.088
+time     = 5.294
+
 A star
-time     = 2.672
+time     = 2.557
 
 Bellman-Ford
-time     = 1754.418 (that's just under 30 minutes)
+time     = 1754.418 (or just under 30 minutes)
 """
