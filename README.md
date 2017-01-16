@@ -18,7 +18,7 @@ x = BF.bellman_ford(graph, node)
 ----------
 
 <b>a-star - show path.py</b><br>
-Compute the shortest distance from a source to a destination in a directed graph where some crow distance (for example Euclid) can be defined.<br>
+compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined as well as the shortest corresponding path.<br>
 /!\ all distances must be >= 0<br>
 
 Return:
