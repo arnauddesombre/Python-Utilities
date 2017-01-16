@@ -18,7 +18,7 @@ x = BF.bellman_ford(graph, node)
 ----------
 
 <b>a-star - heap - show path.py</b><br>
-Compute the shortest distances from a source to a destination in a directed graph.<br>
+Compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined.<br>
 /!\ all distances must be >= 0<br>
 (implementation using heap)<br>
 
@@ -86,6 +86,12 @@ Compute k clusters from an undirected graph, using Kruskal's MST (minimum spanni
 Return:
 - a dictionary of integer keys 1 to k containing the list of nodes of each cluster<br>
 - the minimum distance between the k clusters<br>
+
+----------
+
+<b>compare dijkstra & a star.py</b><br>
+Compare performance of Dijkstra and A\* algorithm using a N * N square where roads are all vertical and all horizontal lines.<br>
+This is not a "utility" file, just a performance and calibration tool.
 
 ----------
 
