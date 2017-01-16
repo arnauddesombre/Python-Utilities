@@ -17,6 +17,19 @@ x = BF.bellman_ford(graph, node)
 
 ----------
 
+<b>a-star - heap - show path.py</b><br>
+Compute the shortest distances from a source to a destination in a directed graph.<br>
+/!\ all distances must be >= 0<br>
+(implementation using heap)<br>
+
+Return:
+- shortest distance<br>
+- shortest path parents dictionary<br>
+
+Note: this program implements A\* from the Dijkstra implementation of to "dijkstra - heap - show path.py"<br>
+
+----------
+
 <b>alignment.py</b><br>
 Sequence alignment: align 2 strings minimizing substitution and insertion cost.<br>
 Optional parameters:
