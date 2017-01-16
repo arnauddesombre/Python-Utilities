@@ -17,16 +17,15 @@ x = BF.bellman_ford(graph, node)
 
 ----------
 
-<b>a-star - heap - show path.py</b><br>
-Compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined.<br>
+<b>a-star - show path.py</b><br>
+Compute the shortest distance from a source to a destination in a directed graph where some crow distance (for example Euclid) can be defined.<br>
 /!\ all distances must be >= 0<br>
-(implementation using heap)<br>
 
 Return:
 - shortest distance<br>
 - shortest path parents dictionary<br>
 
-Note: this program implements A\* from the Dijkstra implementation of to "dijkstra - heap - show path.py"<br>
+Note: this program implements A\* starting from the Dijkstra implementation of "dijkstra - show path.py"<br>
 
 ----------
 
@@ -107,10 +106,9 @@ Return:
 
 ----------
 
-<b>dijkstra - heap - show path.py</b><br>
+<b>dijkstra - show path.py</b><br>
 Compute all shortest distances from a source to all nodes in a directed graph as well as the shortest corresponding paths using Dijkstra's algorithm.<br>
 /!\ all distances must be >= 0<br>
-(implementation using heap)<br>
 
 Return:
 - shortest distances<br>
@@ -118,20 +116,9 @@ Return:
 
 ----------
 
-<b>dijkstra - heap.py</b><br>
+<b>dijkstra.py</b><br>
 Compute all shortest distances from a source to all nodes in a directed graph using Dijkstra's algorithm.<br>
 /!\ all distances must be >= 0<br>
-(implementation using heap)<br>
-
-Return:
-- shortest distances<br>
-
-----------
-
-<b>dijkstra - no heap.py</b><br>
-Compute all shortest distances from a source to all nodes in a directed graph using Dijkstra's algorithm.<br>
-/!\ all distances must be >= 0<br>
-(plain implementation)<br>
 
 Return:
 - shortest distances<br>
