@@ -23,7 +23,7 @@ compute the shortest distance from a source to a destination in a directed graph
 
 Return:
 - shortest distance<br>
-- shortest path parents dictionary<br>
+- shortest path from source to destination<br>
 
 Note: this program implements A\* starting from the Dijkstra implementation of "dijkstra - show path.py"<br>
 
@@ -71,6 +71,16 @@ bellman_ford_path(parents, source, destination) will return the path (a list) fr
 
 ----------
 
+<b>bidirectional dijkstra - show path.py</b><br>
+compute the shortest distance from a source to a destination in a directed graph as well as the shortest corresponding path using bi-directional Dijkstra algorithm.<br>
+/!\ all distances must be >= 0<br>
+
+Return:
+- shortest distance<br>
+- shortest path from source to destination<br>
+
+----------
+
 <b>bfs.py</b><br>
 Explore a directed graph using Breadth First Search (BFS).<br>
 
@@ -89,7 +99,7 @@ Return:
 ----------
 
 <b>compare dijkstra & a star.py</b><br>
-Compare performance of Dijkstra and A\* algorithm using a N * N square where roads are all vertical and all horizontal lines.<br>
+Compare performance of Dijkstra, bidirectional Dijkstra, A\* algorithm, and Bellman-Ford, using a N * N square where roads are all vertical and all horizontal lines.<br>
 This is not a "utility" file, just a performance and calibration tool.
 
 ----------
@@ -114,6 +124,8 @@ Return:
 - shortest distances<br>
 - shortest path parents dictionary<br>
 
+(if a destination is specified, the algorithm stops when 'destination' is found and only returns the distance from source to destination as well as the corresponding shortest path.)
+
 ----------
 
 <b>dijkstra.py</b><br>
@@ -122,6 +134,8 @@ Compute all shortest distances from a source to all nodes in a directed graph us
 
 Return:
 - shortest distances<br>
+
+(if a destination is specified, the algorithm stops when 'destination' is found and only returns the distance from source to destination.)
 
 ----------
 
