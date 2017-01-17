@@ -71,6 +71,16 @@ bellman_ford_path(parents, source, destination) will return the path (a list) fr
 
 ----------
 
+<b>bidirectional a-star - show path.py</b><br>
+compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined as well as the shortest corresponding path using bi-directional A\* algorithm.<br>
+/!\ all distances must be >= 0<br>
+
+Return:
+- shortest distance<br>
+- shortest path from source to destination<br>
+
+----------
+
 <b>bidirectional dijkstra - show path.py</b><br>
 compute the shortest distance from a source to a destination in a directed graph as well as the shortest corresponding path using bi-directional Dijkstra algorithm.<br>
 /!\ all distances must be >= 0<br>
