@@ -80,9 +80,11 @@ def bi_a_star(nodes, graph, source, destination, graph_rev=None):
             if node10 != None and node11 != None:
                 parents[node11] = node10
                 dist[node11] = dist[node10] + graph[node10][node11]
+                visited_nodes.append(node11)
             if node20 != None and node21 != None:
                 parents[node21] = node20
                 dist[node21] = dist[node20] + graph_rev[node20][node21]
+                visited_nodes.append(node21)
             break
 
     # process shortest path and shortest distance
