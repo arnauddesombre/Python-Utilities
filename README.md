@@ -98,7 +98,7 @@ Return:
 
 ----------
 
-<b>compare dijkstra & a star.py</b><br>
+<b>compare dijkstra & a-star.py</b><br>
 Compare performance of Dijkstra, bidirectional Dijkstra, A\* algorithm, and Bellman-Ford, using a N * N square where roads are all vertical and all horizontal lines.<br>
 This is not a "utility" file, just a performance and calibration tool.
 
