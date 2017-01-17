@@ -1,3 +1,9 @@
+"""
+Compare performance of Dijkstra, bidirectional Dijkstra, A* algorithm,
+and Bellman-Ford, using a N * N square where roads are all vertical and
+all horizontal lines.
+"""
+
 from time import time
 
 import imp

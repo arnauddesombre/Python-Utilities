@@ -1,14 +1,12 @@
 """
 compute the shortest distance from a source to a destination
 in a directed graph as well as the shortest corresponding path
-usinga bi-directional Dijkstra algorithm
+using bi-directional Dijkstra algorithm
 /!\ all distances must be >= 0
 
 return:
-A = shortest distances
-A[node] is the shortest distance from source to node
-parent = shortest path parents dictionary
-parent[node] is the parent of node in the shortest path from the given source
+shortest distance
+shortest path from 'source' to 'destination'
 """
 from heapq import heappush, heappop
 

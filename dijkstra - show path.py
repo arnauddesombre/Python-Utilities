@@ -4,12 +4,12 @@ a directed graph as well as the shortest corresponding paths
 /!\ all distances must be >= 0
 
 return:
-if destination not sprcified:
-  A = shortest distances; A[node] is the shortest distance from source to node
-  parent = shortest path parents dictionary; parent[node] is the parent of node in the shortest path from the given source
+if destination not specified:
+  A = shortest distances; where A[node] is the shortest distance from source to node
+  parent = shortest path parents dictionary; where parent[node] is the parent of node in the shortest path from the given source
 if destination specified:
   shortest distance
-  shortest path
+  shortest path between 'source' and 'destination'
 """
 from heapq import heappush, heappop
 

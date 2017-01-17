@@ -6,7 +6,7 @@ defined as well as the shortest corresponding path
 
 return:
 distance = length of shortest path
-path = shortest path between source and destination
+path = shortest path from source to destination
 """
 from heapq import heappush, heappop
 from math import sqrt
