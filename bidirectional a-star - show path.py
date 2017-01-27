@@ -12,11 +12,21 @@ shortest path from 'source' to 'destination'
 from heapq import heappush, heappop
 from math import sqrt, cos, asin
 
+METHOD = "haversine"
+
+def set_distance(method):
+    global METHOD
+    METHOD = method
+
 def _distance(x, y):
     # example of distance function
-    # 'return 0' <=> Dijkstra algorithm
-    # 'return euclid(x, y)' <=> Euclidian distance
-    return haversine(x[1], x[0], y[1], y[0])
+    if METHOD == "haversine":
+        return haversine(x[1], x[0], y[1], y[0])
+    elif METHOD == "euclid":
+        return euclid(x, y)
+    else:
+        # Dijkstra
+        return 0
 
 def euclid(x, y):
     # x and y = in coordinate format = (i,j)
@@ -143,6 +153,7 @@ if __name__ == "__main__":
 
     source = 'A'
     destination = 'C'
+    set_distance("euclid")
     dist, path = bi_a_star(nodes, graph, source, destination)
 
     print "distance =", dist
