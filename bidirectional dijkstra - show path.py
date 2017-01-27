@@ -26,44 +26,47 @@ def bi_dijkstra(nodes, graph, source, destination, graph_rev=None):
     dist, dist_rev = {}, {}
     parents, parents_rev = {}, {}
     queue, queue_rev = [(0, source, None)], [(0, destination, None)]
-    visited_nodes = []
+    visited_nodes, visited_nodes_rev = {}, {}
     while queue or queue_rev:
         # process queue
         if queue:
             path_len, v, parent = heappop(queue)
-            if v not in dist: # v is not visited
-                visited_nodes.append(v)
+            if v not in visited_nodes:
+                visited_nodes[v] = True
                 dist[v] = path_len
                 parents[v] = parent
-                if v in dist_rev:
+                if v in visited_nodes_rev:
                     break
                 for w, edge_len in graph[v].items():
-                    if w not in dist:
-                        heappush(queue, (path_len + edge_len, w, v))
+                    if w not in visited_nodes:
+                        dist[w] = path_len + edge_len
+                        parents[w] = v
+                        heappush(queue, (dist[w], w, v))
         # process queue_rev
         if queue_rev:
             path_len, v, parent = heappop(queue_rev)
-            if v not in dist_rev: # v is not visited
-                visited_nodes.append(v)
+            if v not in visited_nodes_rev:
+                visited_nodes_rev[v] = True
                 dist_rev[v] = path_len
                 parents_rev[v] = parent
-                if v in dist:
+                if v in visited_nodes:
                     break
                 for w, edge_len in graph_rev[v].items():
-                    if w not in dist_rev:
-                        heappush(queue_rev, (path_len + edge_len, w, v))
+                    if w not in visited_nodes_rev:
+                        dist_rev[w] = path_len + edge_len
+                        parents_rev[w] = v
+                        heappush(queue_rev, (dist_rev[w], w, v))
 
     # process shortest path and shortest distance
     distance = float("inf")
     u_best = None
-    for node in visited_nodes:
+    for node in visited_nodes.keys() + visited_nodes_rev.keys():
         if node in dist and node in dist_rev:
             if dist[node] + dist_rev[node] < distance:
                 u_best = node
                 distance = dist[node] + dist_rev[node]
     if distance == float("inf"):
         return distance, []
-
     path = []
     last = u_best
     while last != source:

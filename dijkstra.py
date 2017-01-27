@@ -3,9 +3,9 @@ compute all shortest distances from a source to all nodes in a directed graph
 /!\ all distances must be >= 0
 
 return:
-if destination not specified:
+if destination is not specified:
   A = shortest distances; where A[node] is the shortest distance from source to node
-if destination specified:
+if destination is specified:
   shortest distance between 'source' and 'destination'
 """
 from heapq import heappush, heappop

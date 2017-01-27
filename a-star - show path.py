@@ -9,18 +9,31 @@ distance = length of shortest path
 path = shortest path from source to destination
 """
 from heapq import heappush, heappop
-from math import sqrt
+from math import sqrt, cos, asin
+
+def _distance(x, y):
+    # example of distance function
+    # 'return 0' <=> Dijkstra algorithm
+    # 'return euclid(x, y)' <=> Euclidian distance
+    return haversine(x[1], x[0], y[1], y[0])
 
 def euclid(x, y):
-    # example of distance function
     # x and y = in coordinate format = (i,j)
-    # 'return 0' <=> Dijkstra algorithm
     return sqrt((x[0] - y[0]) ** 2 + (x[1] - y[1]) ** 2)
+
+def haversine(lat1, lon1, lat2, lon2):
+    # from:
+    # https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
+    # http://www.movable-type.co.uk/scripts/latlong.html
+    p = 0.017453292519943295
+    a = 0.5 - cos((lat2 - lat1) * p)/2. + cos(lat1 * p) * cos(lat2 * p) * (1. - cos((lon2 - lon1) * p)) / 2.
+    # distance is in 0.1 meters (10 distance is in meters)
+    return 12742. * asin(sqrt(a)) * 10000.
 
 def a_star(nodes, graph, source, destination):
     visited = {}
     parents = {}
-    estimate = euclid(nodes[source], nodes[destination])
+    estimate = _distance(nodes[source], nodes[destination])
     queue = [(estimate, 0, source, None)]
     distance = float("inf")
     while queue:
@@ -34,7 +47,7 @@ def a_star(nodes, graph, source, destination):
             for w, edge_len in graph[v].items():
                 if w not in visited:
                     d = path_len + edge_len
-                    estimate = d + euclid(nodes[w], nodes[destination])
+                    estimate = d + _distance(nodes[w], nodes[destination])
                     heappush(queue, (estimate, d, w, v))
     return distance, a_star_path(parents, source, destination) if distance < float("inf") else []
 
