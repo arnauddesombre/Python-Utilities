@@ -37,7 +37,7 @@ def haversine(lat1, lon1, lat2, lon2):
     # http://www.movable-type.co.uk/scripts/latlong.html
     p = 0.017453292519943295
     a = 0.5 - cos((lat2 - lat1) * p)/2. + cos(lat1 * p) * cos(lat2 * p) * (1. - cos((lon2 - lon1) * p)) / 2.
-    # distance is in 0.1 meters (10 distance is in meters)
+    # distance is in 0.1 meters (10 x distance is in meters)
     return 12742. * asin(sqrt(a)) * 10000.
 
 def a_star(nodes, graph, source, destination):

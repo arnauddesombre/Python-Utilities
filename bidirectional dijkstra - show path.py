@@ -39,9 +39,10 @@ def bi_dijkstra(nodes, graph, source, destination, graph_rev=None):
                     break
                 for w, edge_len in graph[v].items():
                     if w not in visited_nodes:
-                        dist[w] = path_len + edge_len
-                        parents[w] = v
-                        heappush(queue, (dist[w], w, v))
+                        if (w in dist and path_len + edge_len < dist[w]) or (w not in dist):
+                            dist[w] = path_len + edge_len
+                            parents[w] = v
+                            heappush(queue, (dist[w], w, v))
         # process queue_rev
         if queue_rev:
             path_len, v, parent = heappop(queue_rev)
@@ -53,9 +54,10 @@ def bi_dijkstra(nodes, graph, source, destination, graph_rev=None):
                     break
                 for w, edge_len in graph_rev[v].items():
                     if w not in visited_nodes_rev:
-                        dist_rev[w] = path_len + edge_len
-                        parents_rev[w] = v
-                        heappush(queue_rev, (dist_rev[w], w, v))
+                        if (w in dist_rev and path_len + edge_len < dist_rev[w]) or (w not in dist_rev):
+                            dist_rev[w] = path_len + edge_len
+                            parents_rev[w] = v
+                            heappush(queue_rev, (dist_rev[w], w, v))
 
     # process shortest path and shortest distance
     distance = float("inf")

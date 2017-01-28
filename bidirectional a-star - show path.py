@@ -38,7 +38,7 @@ def haversine(lat1, lon1, lat2, lon2):
     # http://www.movable-type.co.uk/scripts/latlong.html
     p = 0.017453292519943295  # math.pi / 180
     a = 0.5 - cos((lat2 - lat1) * p)/2. + cos(lat1 * p) * cos(lat2 * p) * (1. - cos((lon2 - lon1) * p)) / 2.
-    # distance is in 0.1 meters (10 distance is in meters)
+    # distance is in 0.1 meters (10 x distance is in meters)
     return 12742. * asin(sqrt(a)) * 10000. # // 12742 = 2 * R; R = 6371 km (earth radius)
 
 def reverse(nodes, graph):
@@ -58,48 +58,39 @@ def bi_a_star(nodes, graph, source, destination, graph_rev=None):
     parents, parents_rev = {}, {}
     queue, queue_rev = [(0, 0, source, None)], [(0, 0, destination, None)]
     visited_nodes, visited_nodes_rev = {}, {}
-    best_distance = float("inf")
-    path_len1 = 0
-    path_len2 = 0
-    add_on = _distance(nodes[source], nodes[destination]) / 2.
     while queue or queue_rev:
         # process queue
         if queue:
-            path_estimate, path_len1, v1, parent = heappop(queue)
-            if v1 not in visited_nodes:
-                visited_nodes[v1] = True
-                dist[v1] = path_len1
-                parents[v1] = parent
-                for w, edge_len in graph[v1].items():
+            path_estimate, path_len, v, parent = heappop(queue)
+            if v not in visited_nodes:
+                visited_nodes[v] = True
+                dist[v] = path_len
+                parents[v] = parent
+                if v in visited_nodes_rev:
+                    break
+                for w, edge_len in graph[v].items():
                     if w not in visited_nodes:
-                        dist[w] = path_len1 + edge_len
-                        parents[w] = v1
-                        estimate = dist[w] + (_distance(nodes[w], nodes[destination]) - _distance(nodes[w], nodes[source])) / 2.
-                        heappush(queue, (estimate, dist[w], w, v1))
-                        if w in dist_rev:
-                            if dist[w] + dist_rev[w] < best_distance:
-                                best_distance = dist[w] + dist_rev[w]
+                        if (w in dist and path_len + edge_len < dist[w]) or (w not in dist):
+                            dist[w] = path_len + edge_len
+                            parents[w] = v
+                            estimate = dist[w] + (_distance(nodes[w], nodes[destination]) - _distance(nodes[w], nodes[source])) / 2.
+                            heappush(queue, (estimate, dist[w], w, v))
         # process queue_rev
         if queue_rev:
-            path_estimate, path_len2, v2, parent = heappop(queue_rev)
-            if v2 not in visited_nodes_rev:
-                visited_nodes_rev[v2] = True
-                dist_rev[v2] = path_len2
-                parents_rev[v2] = parent
-                for w, edge_len in graph_rev[v2].items():
+            path_estimate, path_len, v, parent = heappop(queue_rev)
+            if v not in visited_nodes_rev:
+                visited_nodes_rev[v] = True
+                dist_rev[v] = path_len
+                parents_rev[v] = parent
+                if v in visited_nodes:
+                    break
+                for w, edge_len in graph_rev[v].items():
                     if w not in visited_nodes_rev:
-                        dist_rev[w] = path_len2 + edge_len
-                        parents_rev[w] = v2
-                        estimate = dist_rev[w] + (_distance(nodes[w], nodes[source]) - _distance(nodes[w], nodes[destination])) / 2.
-                        heappush(queue_rev, (estimate, dist_rev[w], w, v2))
-                        if w in dist:
-                            if dist_rev[w] + dist[w] < best_distance:
-                                best_distance = dist_rev[w] + dist[w]
-        # stop criteria
-        # from http://www.cs.princeton.edu/courses/archive/spr06/cos423/Handouts/EPP%20shortest%20path%20algorithms.pdf
-        # page 16 (see page 9 for best path seen so far)
-        if path_len1 + path_len2 > best_distance + add_on:
-            break
+                        if (w in dist_rev and path_len + edge_len < dist_rev[w]) or (w not in dist_rev):
+                            dist_rev[w] = path_len + edge_len
+                            parents_rev[w] = v
+                            estimate = dist_rev[w] + (_distance(nodes[w], nodes[source]) - _distance(nodes[w], nodes[destination])) / 2.
+                            heappush(queue_rev, (estimate, dist_rev[w], w, v))
 
     # process shortest path and shortest distance
     distance = float("inf")
