@@ -174,6 +174,17 @@ Knapsack algorithm (Given a set of items, each with a weight and a value, determ
 <b>kruskal.py</b><br>
 Computes Kruskal's minimum spanning tree (MST) algorithm of an undirected graph (edge's costs can be negative).<br>
 
+
+----------
+
+<b>landmark - show path.py</b><br>
+compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined, and where distances from some landmarks are known, as well as the shortest corresponding path.<br>
+/!\ all distances must be >= 0<br>
+
+Return:
+- shortest distance<br>
+- shortest path from source to destination<br>
+
 ----------
 
 <b>prim.py</b><br>
