@@ -55,7 +55,7 @@ Return:
 
 <b>arithmetic.py</b><br>
 Contain the following arithmetic functions:<br>
-- is_prime(n): return boolean indicating if n is prime
+- is_prime(n): return Boolean indicating if n is prime
 - gcd(a, b): return greatest common divisor of a and b
 - gcdm(*args): return gcd of args
 - lcm(a, b): return lowest common multiple of a and b
@@ -73,10 +73,10 @@ Compute all shortest distances from a source to all points in a directed graph a
 Return:
 - shortest distances<br>
 - shortest path parents dictionary<br>
-- boolean indicating if a negative cycle exists<br>
+- Boolean indicating if a negative cycle exists<br>
 
 negative_cycle(graph, source) will return a list containing one negative cycle (note there can be multiple negative cycles). The first
-and last element of the list are the same ([A, B, ... , A])
+and last element of the list are the same ([A, B, ..., A])
 
 bellman_ford_path(parents, source, destination) will return the path (a list) from 'source' to 'destination'. Note that if there is a negative loop, this function will run indefinitely
 
