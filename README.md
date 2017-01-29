@@ -17,6 +17,17 @@ x = BF.bellman_ford(graph, node)
 
 ----------
 
+<b>a-star.py</b><br>
+compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined.<br>
+/!\ all distances must be >= 0<br>
+
+Return:
+- shortest distance<br>
+
+Note: this program implements A\* starting from the Dijkstra implementation of "dijkstra.py"<br>
+
+----------
+
 <b>a-star - show path.py</b><br>
 compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined as well as the shortest corresponding path.<br>
 /!\ all distances must be >= 0<br>
@@ -109,17 +120,19 @@ Return:
 ----------
 
 <b>compare a-star & landmark [roadmap]</b><br>
-Compare performance of A\* and Landmarks algorithm. 8 landmarks used are the 4 corners of the square and the 4 centers of each side of the sqaure of the square that contains the map.<br>
+Compare the performance of A\* and Landmarks algorithm using real world maps (links and instructions are in the file).<br>
+v1: The landmarks used are the nodes closest to the 4 corners of the square and the 4 centers of each side of the square of the square that contains the map.<br>
+v2: The landmarks used are the nodes closest to the 4 corners of the square, the 4 centers of each side of the square, and the 8 quarters (2 per side) of the square that contains the map. Only the 4 best landmarks among the 16 are used for each calculation.<br>
 
 <b>compare dijkstra & a-star.py</b><br>
-Compare performance of Dijkstra, bidirectional Dijkstra, A\* algorithm, and Bellman-Ford, using a N * N square where roads are all vertical and all horizontal lines.<br>
+Compare tje performance of Dijkstra, bidirectional Dijkstra, A\* algorithm, and Bellman-Ford, using a N * N square where roads are all vertical and all horizontal lines.<br>
 
 <b>compare dijkstra & a-star [roadmap].py</b><br>
-Compare performance of Dijkstra, bidirectional Dijkstra, and A\* algorithm, using real world maps (links and instructions are in the file).<br>
+Compare the performance of Dijkstra, bidirectional Dijkstra, and A\* algorithm, using real world maps (links and instructions are in the file).<br>
 
 These are not a "utility" files, just performance and calibration tools. The conclusion is similar to what's described in:<br>
 http://www.cs.princeton.edu/courses/archive/spr06/cos423/Handouts/EPP%20shortest%20path%20algorithms.pdf<br>
-(A\* is better, Landmark is about 35% faster than A\* but requires pre-processing)<br>
+(A\* is better, Landmark v2 is about 35% faster than A\* but requires pre-processing)<br>
 
 ----------
 
