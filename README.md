@@ -18,7 +18,7 @@ x = BF.bellman_ford(graph, node)
 ----------
 
 <b>a-star.py</b><br>
-compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined.<br>
+Compute the shortest distance from a source to a destination in a directed graph where some crow distance ([Euclid](https://en.wikipedia.org/wiki/Euclidean_distance) or [haversine](https://en.wikipedia.org/wiki/Haversine_formula) can be defined.<br>
 /!\ all distances must be >= 0<br>
 
 Return:
@@ -29,7 +29,7 @@ Note: this program implements A\* starting from the Dijkstra implementation of "
 ----------
 
 <b>a-star - show path.py</b><br>
-compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined as well as the shortest corresponding path.<br>
+Compute the shortest distance from a source to a destination in a directed graph where some crow distance ([Euclid](https://en.wikipedia.org/wiki/Euclidean_distance) or [haversine](https://en.wikipedia.org/wiki/Haversine_formula) can be defined as well as the shortest corresponding path.<br>
 /!\ all distances must be >= 0<br>
 
 Return:
@@ -83,7 +83,7 @@ bellman_ford_path(parents, source, destination) will return the path (a list) fr
 ----------
 
 <b>bidirectional a-star - show path.py</b><br>
-compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined as well as the shortest corresponding path using bi-directional A\* algorithm.<br>
+compute the shortest distance from a source to a destination in a directed graph where some crow distance ([Euclid](https://en.wikipedia.org/wiki/Euclidean_distance) or [haversine](https://en.wikipedia.org/wiki/Haversine_formula) can be defined as well as the shortest corresponding path using bi-directional A\* algorithm.<br>
 /!\ all distances must be >= 0<br>
 
 Return:
