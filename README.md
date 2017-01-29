@@ -132,8 +132,8 @@ Compare the performance of Dijkstra, bidirectional Dijkstra, and A\* algorithm, 
 
 These are not a "utility" files, just performance and calibration tools. The conclusion is similar to what's described in:<br>
 http://www.cs.princeton.edu/courses/archive/spr06/cos423/Handouts/EPP%20shortest%20path%20algorithms.pdf<br>
-- in a graph where no crow distance can be defined (social network for example), bi-directional Dijkstra is best;<br>
-- if a crow distance can be defined, A\* is best (bi-directional A\* is not as good - but still better than bi-directional Dijkstra);<br>
+- in a graph where no crow distance can be defined (social network for example), bi-directional Dijkstra is best<br>
+- if a crow distance can be defined, A\* is best (bi-directional A\* is not as good - but still better than bi-directional Dijkstra)<br>
 - using landmarks requires more memory (storage) and some pre-processing. Landmark v1 is faster than A\* by by 25-30%, Landmark v2 is faster by 35-40%<br>
 
 ----------
