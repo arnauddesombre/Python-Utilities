@@ -108,13 +108,18 @@ Return:
 
 ----------
 
+<b>compare a-star & landmark [roadmap]</b><br>
+Compare performance of A\* and Landmarks algorithm. 8 landmarks used are the 4 corners of the square and the 4 centers of each side of the sqaure of the square that contains the map.<br>
+
 <b>compare dijkstra & a-star.py</b><br>
 Compare performance of Dijkstra, bidirectional Dijkstra, A\* algorithm, and Bellman-Ford, using a N * N square where roads are all vertical and all horizontal lines.<br>
 
 <b>compare dijkstra & a-star [roadmap].py</b><br>
 Compare performance of Dijkstra, bidirectional Dijkstra, and A\* algorithm, using real world maps (links and instructions are in the file).<br>
 
-These are not a "utility" files, just performance and calibration tools.
+These are not a "utility" files, just performance and calibration tools. The conclusion is similar to what's described in:<br>
+http://www.cs.princeton.edu/courses/archive/spr06/cos423/Handouts/EPP%20shortest%20path%20algorithms.pdf<br>
+(A\* is better, Landmark is about 35% faster than A\* but requires pre-processing)<br>
 
 ----------
 
