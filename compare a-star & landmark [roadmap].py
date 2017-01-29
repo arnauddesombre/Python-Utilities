@@ -62,11 +62,15 @@ for node in nodes:
     if nodes[node][0] > right:  right = nodes[node][0]
     if nodes[node][1] < bottom: bottom = nodes[node][1]
     if nodes[node][1] > top:    top = nodes[node][1]
-# 8 points: 4 corners + 4 center of each side
+# 16 points: 4 corners + 4 center of each side + 8 quarters (2 on each side)
 corners  = [(left, top), (right, top), (right, bottom), (left, bottom)]
 centers  = [((left+right)/2., top), (right, (bottom+top)/2.), ((left+right)/2., bottom), (left, (bottom+top)/2.)]
-points = corners + centers
-# find 8 landmarks on the graph: the 8 nodes closest to the 8 points
+quarters = [((3.*left+right)/4., top), ((left+3.*right)/4., top),
+            (right, (3.*bottom+top)/4.), (right, (bottom+3.*top)/4.),
+            ((3.*left+right)/4., bottom), ((left+3.*right)/4., bottom),
+            (left, (3.*bottom+top)/4.), (left, (bottom+3.*top)/4.)]
+points = corners + centers + quarters
+# find 16 landmarks on the graph: the 16 nodes closest to the 16 points
 distances = [float("inf")] * len(points)
 landmarks = [None] * len(points)
 a_star = imp.load_source("", DIR + "a-star.py")
@@ -106,6 +110,7 @@ print "done in time =", "{0:.3f}".format(time() - t0)
 
 total1, error1 = 0., []
 total2, error2 = 0., []
+total3, error3 = 0., []
 
 N_TEST = 100
 for test in xrange(N_TEST):
@@ -131,10 +136,12 @@ for test in xrange(N_TEST):
     total1 += t0
 
     print
-    print "landmark - show path"
+    # using the 8 first landmarks (4 corners + 4 center of sides)
+    # using the 8 quarters is slower
+    print "landmark - show path (using 8 landmarks)"
     landmark = imp.load_source("landmark", DIR + "landmark - show path.py")
     t0 = time()
-    dist, parents = landmark.landmark(nodes, graph, source, destination, len(landmarks))
+    dist, parents = landmark.landmark(nodes, graph, source, destination, landmarks, 8, False)
     t0 = time() - t0
     if dist != dist_ref:
         print "distance =", dist
@@ -143,49 +150,64 @@ for test in xrange(N_TEST):
     print "time     =", "{0:.3f}".format(t0)
     total2 += t0
 
+    print
+    print "landmark - show path (using best landmarks)"
+    landmark = imp.load_source("landmark", DIR + "landmark - show path.py")
+    t0 = time()
+    dist, parents = landmark.landmark(nodes, graph, source, destination, landmarks, 16, True)
+    t0 = time() - t0
+    if dist != dist_ref:
+        print "distance =", dist
+        print "################### !!!"
+        error3.append(abs(dist - dist_ref))
+    print "time     =", "{0:.3f}".format(t0)
+    total3 += t0
+
 print
 print "============================================"
 print "Time for", N_TEST, "calculations ( [errors] ):"
 print
-print "A star - show path    ", "{0:.3f}".format(total1), " (", error1, ")"
-print "landmarks - show path ", "{0:.3f}".format(total2), " (", error2, ")"
+print "A star - show path                   ", "{0:.3f}".format(total1), " (", error1, ")"
+print "landmarks - show path (8 landmarks)  ", "{0:.3f}".format(total2), " (", error2, ")"
+print "landmarks - show path (4 best)       ", "{0:.3f}".format(total3), " (", error3, ")"
 
 
 """
-USING 8 LANDMARKS
-(4 corners + 4 middle of sides)
+Using 8 landmarks (4 corners + 4 middle of sides) and
+best of 16 (4 corners + 4 middle of sides + 8 quarters (2 on each side))
+1000 random tests
 
 results using USA-road-d.NY
 ---------------------------
-
 reading map...
-done in time = 3.854
-reversing graph in time = 0.222
+done in time = 3.759
+reversing graph in time = 0.220
 select landmarks
-done in time = 3.302
+done in time = 6.162
 compute all distances from landmarks
-done in time = 12.827
+done in time = 25.457
 
 Time for 1000 calculations ( [errors] ):
-A star - show path     166.986  ( [] )
-landmarks - show path  125.658  ( [1, 1] )
-(33% improvement)
+A star - show path                    158.271  ( [] )
+landmarks - show path (8 landmarks)   120.410  ( [1, 1] ) -> improvement of 24%
+landmarks - show path (4 best)        101.344  ( [1, 1] ) -> improvement of 36%
+
 
 results using USA-road-d.NE
 ---------------------------
-
 reading map...
-done in time = 21.608
-reversing graph in time = 1.697
+done in time = 21.815
+reversing graph in time = 1.762
 select landmarks
-done in time = 19.029
+done in time = 36.966
 compute all distances from landmarks
-done in time = 76.461
+done in time = 164.929
 
 Time for 1000 calculations ( [errors] ):
-A star - show path     1134.748  ( [] )
-landmarks - show path  825.231  ( [] )
-(37% improvement)
+
+A star - show path                    1120.607  ( [] )
+landmarks - show path (8 landmarks)   799.792  ( [1] ) -> improvement of 29%
+landmarks - show path (4 best)        638.862  ( [1] ) -> improvement of 43%
 
 /!\ This is only an average improvement;
     in some cases Landmark is worse by more than 100%
