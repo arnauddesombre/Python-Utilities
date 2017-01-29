@@ -125,7 +125,7 @@ v1: The landmarks used are the nodes closest to the 4 corners of the square and 
 v2: The landmarks used are the nodes closest to the 4 corners of the square, the 4 centers of each side of the square, and the 8 quarters (2 per side) of the square that contains the map. Only the 4 best landmarks among the 16 are used for each calculation.<br>
 
 <b>compare dijkstra & a-star.py</b><br>
-Compare tje performance of Dijkstra, bidirectional Dijkstra, A\* algorithm, and Bellman-Ford, using a N * N square where roads are all vertical and all horizontal lines.<br>
+Compare the performance of Dijkstra, bidirectional Dijkstra, A\* algorithm, and Bellman-Ford, using a N * N square where roads are all vertical and all horizontal lines.<br>
 
 <b>compare dijkstra & a-star [roadmap].py</b><br>
 Compare the performance of Dijkstra, bidirectional Dijkstra, and A\* algorithm, using real world maps (links and instructions are in the file).<br>
