@@ -179,6 +179,11 @@ Variant implemented: find only one.<br>
 
 ----------
 
+<b>kargerMinCut.py</b><br>
+Computes the minimum cut of an undirected graph using Karger's algorithm.<br>
+
+----------
+
 <b>knapsack.py</b><br>
 Knapsack algorithm (Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible).
 - Value = non-negative<br>
@@ -193,7 +198,6 @@ Knapsack algorithm (Given a set of items, each with a weight and a value, determ
 
 <b>kruskal.py</b><br>
 Computes Kruskal's minimum spanning tree (MST) algorithm of an undirected graph (edge's costs can be negative).<br>
-
 
 ----------
 
