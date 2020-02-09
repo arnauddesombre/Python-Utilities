@@ -1,9 +1,7 @@
 # Python utilities
-My Python utility programs.
+My Python utility programs.<br>
 
-Each program in this repository is a stand-alone file.<br>
-Works in Python 2 and 3.
-
+Each program in this repository is a stand-alone file, and works in Python 2 and 3. These can be useful for competitive programming for example.<br>
 
 Tip to import a homemade method in another python program:
 ```
@@ -17,30 +15,8 @@ x = BF.bellman_ford(graph, node)
 
 ----------
 
-<b>a-star.py</b><br>
-Compute the shortest distance from a source to a destination in a directed graph where some crow distance ([Euclid](https://en.wikipedia.org/wiki/Euclidean_distance) or [haversine](https://en.wikipedia.org/wiki/Haversine_formula) can be defined.<br>
-/!\ all distances must be >= 0<br>
-
-Return:
-- shortest distance<br>
-
-Note: this program implements A\* starting from the Dijkstra implementation of "dijkstra.py"<br>
-
-----------
-
-<b>a-star - show path.py</b><br>
-Compute the shortest distance from a source to a destination in a directed graph where some crow distance ([Euclid](https://en.wikipedia.org/wiki/Euclidean_distance) or [haversine](https://en.wikipedia.org/wiki/Haversine_formula) can be defined as well as the shortest corresponding path.<br>
-/!\ all distances must be >= 0<br>
-
-Return:
-- shortest distance<br>
-- shortest path from source to destination<br>
-
-Note: this program implements A\* starting from the Dijkstra implementation of "dijkstra - show path.py"<br>
-
-----------
-
-<b>alignment.py and alignment v2.py</b><br>
+<b>alignment.py </b><br>
+<b>alignment v2.py</b><br>
 Sequence alignment: align 2 strings minimizing substitution and insertion cost.<br>
 Optional parameters:
 - penalty for substitution<br>
@@ -62,7 +38,35 @@ Contain the following arithmetic functions:<br>
 - lcmm(*args): return lcm of args
 - prime_decomposition(n): return all the prime factors of n in a list
 - factors(n): return all the factors (divisors) of n in a list (brute-force from 1 to sqrt(n))
-- divisors(n): same as factors(n), using combination of prime factors (much more efficient)
+- divisors(n): same as factors(n), using combination of prime factors (much more efficient)<br>
+
+----------
+
+<b>ASCII.py</b><br>
+ASCII codes using Unicode strings (for example print(u'\u2588') will print ASCII character 0xDB (FULL BLOCK))<br>
+
+----------
+
+<b>a-star - show path.py</b><br>
+Compute the shortest distance from a source to a destination in a directed graph where some crow distance ([Euclid](https://en.wikipedia.org/wiki/Euclidean_distance) or [haversine](https://en.wikipedia.org/wiki/Haversine_formula) can be defined as well as the shortest corresponding path.<br>
+/!\ all distances must be >= 0<br>
+
+Return:
+- shortest distance<br>
+- shortest path from source to destination<br>
+
+Note: this program implements A\* starting from the Dijkstra implementation of "dijkstra - show path.py"<br>
+
+----------
+
+<b>a-star.py</b><br>
+Compute the shortest distance from a source to a destination in a directed graph where some crow distance ([Euclid](https://en.wikipedia.org/wiki/Euclidean_distance) or [haversine](https://en.wikipedia.org/wiki/Haversine_formula) can be defined.<br>
+/!\ all distances must be >= 0<br>
+
+Return:
+- shortest distance<br>
+
+Note: this program implements A\* starting from the Dijkstra implementation of "dijkstra.py"<br>
 
 ----------
 
@@ -77,9 +81,17 @@ Return:
 - Boolean indicating if a negative cycle exists<br>
 
 negative_cycle(graph, source) will return a list containing one negative cycle (note there can be multiple negative cycles). The first
-and last element of the list are the same ([A, B, ..., A])
+and last element of the list are the same ([A, B, ..., A])<br>
 
-bellman_ford_path(parents, source, destination) will return the path (a list) from 'source' to 'destination'. Note that if there is a negative loop, this function will run indefinitely
+bellman_ford_path(parents, source, destination) will return the path (a list) from 'source' to 'destination'. Note that if there is a negative loop, this function will run indefinitely<br>
+
+----------
+
+<b>bfs.py</b><br>
+Explore a directed graph using Breadth First Search (BFS).<br>
+
+Return:
+- a dictionary containing the visiting order for each node starting at 1<br>
 
 ----------
 
@@ -103,16 +115,18 @@ Return:
 
 ----------
 
-<b>bfs.py</b><br>
-Explore a directed graph using Breadth First Search (BFS).<br>
+<b>binaryIndexedTree.py</b><br>
+Implementation of Binary Indexed Trees (Fenwick Tree).<br>
 
-Return:
-- a dictionary containing the visiting order for each node starting at 1<br>
+----------
+
+<b>centroid.py</b><br>
+Implementation of the Centroid Decomposition of a Tree.<br>
 
 ----------
 
 <b>clustering.py</b><br>
-Compute k clusters from an undirected graph, using Kruskal's MST (minimum spanning tree) algorithm, so that the minimum distance between 2 nodes in different clusters is maximized.
+Compute k clusters from an undirected graph, using Kruskal's MST (minimum spanning tree) algorithm, so that the minimum distance between 2 nodes in different clusters is maximized.<br>
 
 Return:
 - a dictionary of integer keys 1 to k containing the list of nodes of each cluster<br>
@@ -120,8 +134,13 @@ Return:
 
 ----------
 
+<b>combinations.py</b><br>
+Miscellaneous implementations of “n choose r” nCr(), with optimizations for competitive programming.<br>
+
+----------
+
 <b>compare a-star & landmark [roadmap]</b><br>
-Compare the performance of A\* and Landmarks algorithm using real world maps (links and instructions are in the file).<br>
+Compare the performance of A\* and Landmarks algorithm using real world maps (links and instructions are in the file, or also available on this page: USA-road-d.NY.co and USA-road-d.NY.gr).<br>
 v1: The landmarks used are the nodes closest to the 4 corners of the square and the 4 centers of each side of the square of the square that contains the map.<br>
 v2: The landmarks used are the nodes closest to the 4 corners of the square, the 4 centers of each side of the square, and the 8 quarters (2 per side) of the square that contains the map. Only the 4 best landmarks among the 16 are used for each calculation.<br>
 
@@ -136,6 +155,12 @@ http://www.cs.princeton.edu/courses/archive/spr06/cos423/Handouts/EPP%20shortest
 - in a graph where no crow distance can be defined (social network for example), bi-directional Dijkstra is best<br>
 - if a crow distance can be defined, A\* is best (bi-directional A\* is not as good - but still better than bi-directional Dijkstra)<br>
 - using landmarks requires more memory (storage) and some pre-processing. Landmark v1 is faster than A\* by by 25-30%, Landmark v2 is faster by 35-40%<br>
+
+----------
+
+<b>convex hull.py</b><br>
+Determine the convex hull of a set of points using Graham scan algorithm.
+Example of a set of points is provided in text file “points.txt”.<br>
 
 ----------
 
@@ -170,13 +195,28 @@ Compute all shortest distances from a source to all nodes in a directed graph us
 Return:
 - shortest distances<br>
 
-(if a destination is specified, the algorithm stops when 'destination' is found and only returns the distance from source to destination.)
+(if a destination is specified, the algorithm stops when 'destination' is found and only returns the distance from source to destination.)<br>
+
+----------
+
+<b>fibonacci.py</b><br>
+Calculate the Fibonacci numbers using Matrix exponentiation.<br>
 
 ----------
 
 <b>find_all_paths.py</b><br>
 Find all simple paths (no loop) in a directed graph starting from a specified node by brute recursive enumeration.<br>
 Variant implemented: find only one.<br>
+
+----------
+
+<b>floyd-warshall.py</b><br>
+Implementation of the Floyd-Warshall algorithm (all-pairs shortest paths).<br>
+
+----------
+
+<b>kadane.py</b><br>
+Implementation of the Kadane algorithm (Maximum subarray problem).<br>
 
 ----------
 
@@ -212,8 +252,42 @@ Return:
 
 ----------
 
+<b>lca.py</b><br>
+Miscellaneous implementation of Lowest Common Ancestor algorithms, with optimizations for competitive programming.<br>
+This program reads the graph from text file points.txt<br>
+
+----------
+
+<b>Longest Common Sub-Sequence.py</b><br>
+<b>Longest Common Sub-String.py</b><br>
+Determine the longest sub-sequence / sub-string between two sequences (strings).<br>
+
+----------
+
+<b>palindrome.py</b><br>
+Find the longest palindrome within a string, using Manacher's algorithm.<br>
+
+----------
+
+<b>parallel_cpu_1.py</b><br>
+<b>parallel_cpu_2.py</b><br>
+
+_1: Parallel execution using multiprocessing/map<br>
+from multiprocessing.dummy import Pool as ThreadPool<br>
+
+_2: Parallel execution using pathos/map
+from pathos.multiprocessing import cpu_count
+from pathos.pools import ParallelPool
+
+----------
+
 <b>prim.py</b><br>
 Computes Prim's minimum spanning tree (MST) algorithm of an undirected graph (edge's costs can be negative).<br>
+
+----------
+
+<b>rank_matrix.py</b><br>
+Find the rank of a matrix (not necessarily square).<br>
 
 ----------
 
@@ -233,8 +307,27 @@ return:
 
 ----------
 
+<b>segment_tree.py</b><br>
+Implementation of Segment Tree.<br>
+
+----------
+
 <b>traveling_salesman.py</b><br>
 Computes the shortest path between all nodes of a connected graph starting at one particular node and returning at that same node (connected = there is a path between every pair of nodes).<br>
-(implementation with dynamic programming algorithm)
+(implementation with dynamic programming algorithm)<br>
+
+----------
+
+<b>trie.py</b><br>
+Implementation of a TRIE<br>
+
+----------
+
+<b>weekday.py</b><br>
+isleap(year) return a Boolean indicating if the year is leap<br>
+weekday(day, month, year) return the day of the week for any date<br>
+
+Note that the periodicity of weekday is 2800 years. i.e:<br>
+weekday(day, month, year) == weekday(day, month, year + 2800) for any date<br>
 
 ----------
