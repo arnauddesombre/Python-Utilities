@@ -1,8 +1,8 @@
 # Python utilities
-My Python 2 utility programs
+My Python utility programs
 
 Each program in this repository is a stand-alone file.<br>
-In Python 2 but easily portable to Python 3 (change `xrange(...)` to `range(...)` and `print ...` to `print(...)`).
+Works in Python 2 and 3 
 
 
 Tip to import a homemade method in another python program:
