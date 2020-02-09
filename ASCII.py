@@ -1,7 +1,6 @@
 """
-Python ASCII Character
+Python ASCII Character, using UNICODE strings
 
-generating ASCII characters in the IDLE console
 for example:
 print(u'\u2588')
 will print ASCII character 210 / 0xDB (FULL BLOCK)
