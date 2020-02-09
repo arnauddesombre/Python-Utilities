@@ -50,17 +50,17 @@ hull = []
 hull.append(points[0])
 hull.append(points[1])
 
-for i in xrange(2, len(points)):
+for i in range(2, len(points)):
     top = hull.pop()
     while top.direction(hull[-1], top, points[i]) <= 0:
            top = hull.pop()
     hull.append(top)
     hull.append(points[i])
 
-print "The points belonging to the convex hull are:"
-print "Line\tX\tY"
+print("The points belonging to the convex hull are:")
+print("Line\tX\tY")
 for point in hull:
-    print "%3i\t%.2f\t%.2f" % (point.ref, point.x, point.y)
+    print("%3i\t%.2f\t%.2f" % (point.ref, point.x, point.y))
 # (line starts at zero: line reference in points.txt)
 
 
