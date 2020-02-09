@@ -40,7 +40,7 @@ Note: this program implements A\* starting from the Dijkstra implementation of "
 
 ----------
 
-<b>alignment.py</b><br>
+<b>alignment.py and alignment v2.py</b><br>
 Sequence alignment: align 2 strings minimizing substitution and insertion cost.<br>
 Optional parameters:
 - penalty for substitution<br>
