@@ -62,7 +62,7 @@ def bi_dijkstra(nodes, graph, source, destination, graph_rev=None):
     # process shortest path and shortest distance
     distance = float("inf")
     u_best = None
-    for node in visited_nodes.keys() + visited_nodes_rev.keys():
+    for node in list(visited_nodes.keys()) + list(visited_nodes_rev.keys()):
         if node in dist and node in dist_rev:
             if dist[node] + dist_rev[node] < distance:
                 u_best = node
@@ -108,6 +108,6 @@ if __name__ == "__main__":
     destination = 'C'
     dist, path = bi_dijkstra(nodes, graph, source, destination)
 
-    print dist
-    print path
+    print(dist)
+    print(path)
     print

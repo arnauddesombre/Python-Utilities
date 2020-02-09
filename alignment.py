@@ -61,11 +61,11 @@ if __name__ == "__main__":
     a = align(string1, string2, 1., float("inf"))
 
     print
-    print string1
-    print string2
+    print(string1)
+    print(string2)
     print
-    print a[0]
-    print a[1]
+    print(a[0])
+    print(a[1])
     print
-    print "cost =", a[2]
+    print("cost =", a[2])
     print

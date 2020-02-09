@@ -58,7 +58,7 @@ def landmark(nodes, graph, source, destination, landmarks=None, n_landmark=None,
     if n_landmark == None:
         n_landmark = (len(nodes[source]) - 2) / 2
     if landmarks == None or not optimize:
-        landmarks = xrange(n_landmark)
+        landmarks = range(n_landmark)
     elif optimize:
         landmarks = best_landmarks(nodes[source][:2], nodes[destination][:2], [nodes[x][:2] for x in landmarks], n_landmark)
     visited = {}
@@ -94,8 +94,8 @@ def best_landmarks(source, destination, landmarks, n_landmark):
     #         where nodes is the list of tuples passed to landmark()
     #         (longitude, latitude, dist(1,1), dist(1,2),..., dist(n_landmark,1), dist(n_landmark,2))
     # find 'best': the 2 landmarks closest to source + the 2 landmarks closest to destination
-    distances_sources = sorted([(_distance(source, landmarks[i]), i) for i in xrange(n_landmark)])
-    distances_destination = sorted([(_distance(destination, landmarks[i]), i) for i in xrange(n_landmark)])
+    distances_sources = sorted([(_distance(source, landmarks[i]), i) for i in range(n_landmark)])
+    distances_destination = sorted([(_distance(destination, landmarks[i]), i) for i in range(n_landmark)])
     best = set([distances_sources[0][1], distances_sources[1][1], distances_destination[0][1], distances_destination[1][1]])
     if len(best) == 2:
         # find 2 other landmarks

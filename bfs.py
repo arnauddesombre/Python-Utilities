@@ -40,4 +40,4 @@ if __name__ == "__main__":
              'D': {'A':2, 'C':3, 'E':1},
              'E': {'C':2, 'D':1}}
 
-    print BFS(graph, 'A')
+    print(BFS(graph, 'A'))

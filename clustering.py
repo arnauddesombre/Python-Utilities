@@ -92,7 +92,7 @@ def clustering(nodes, graph, k):
     # change cluster keys
     # first, make sure no keys are already integer between 1 and k
     for key in cluster:
-        if key in xrange(k+1):
+        if key in range(k+1):
             seed = str(key)
             while seed in cluster:
                 seed = seed + str(randint(0,9))
@@ -127,8 +127,8 @@ if __name__ == "__main__":
 
     k = 3
     cluster = clustering(nodes, graph, k)
-    print "clusters:"
-    for x in xrange(1, k+1):
-        print x, "=", cluster[0][x]
-    print "minimum distance =", cluster[1]
+    print("clusters:")
+    for x in range(1, k+1):
+        print(x, "=", cluster[0][x])
+    print("minimum distance =", cluster[1])
     print

@@ -16,9 +16,9 @@ def ts(points, graph):
     # initial value = distance from 0 to every other point + keep the track of edges
     A = {(frozenset([0, i + 1]), i + 1): (dist, [0, i + 1]) for i, dist in enumerate(distances[0][1:])}
     n = len(points)
-    for m in xrange(2, n):
+    for m in range(2, n):
         B = {}
-        for S in [frozenset(C) | {0} for C in itertools.combinations(xrange(1, n), m)]:
+        for S in [frozenset(C) | {0} for C in itertools.combinations(range(1, n), m)]:
             for j in S - {0}:
                 B[(S, j)] = min([(A[(S - {j}, k)][0] + distances[k][j], A[(S - {j},k)][1] + [j]) for k in S if (k != 0 and k != j)])
         A = B
@@ -72,13 +72,13 @@ if __name__ == "__main__":
     path = [new_nodes[x] for x in result[1]] + [new_nodes[0]]
 
     print
-    print " -> ".join(path)
-    print distance
+    print(" -> ".join(path))
+    print(distance)
 
     # sanity check:
     L = 0.
-    for i in xrange(len(path)-1):
+    for i in range(len(path)-1):
         L = L + graph[path[i]][path[i+1]]
-    print L
+    print(L)
     assert distance == L
     print

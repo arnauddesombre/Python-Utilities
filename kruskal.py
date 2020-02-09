@@ -8,31 +8,34 @@ MST assumes the graph is undirected.
 if graph[from][to] == dist, it is assumed that graph[to][from] == dist as well
 therefore in the MST, the edge would be [from, to, dist] or [to, from, dist]
 
-/!\ if both graph[from][to] and graph[to][from] are defined, even with the same
-value, it would be assumed that this creates 2 different edges between 'from' and 'to'
-(which would have no impact on the output)
+/!\ if both graph[from][to] and graph[to][from] are defined, even with the
+same value, it would be assumed that this creates 2 different edges between
+'from' and 'to' (which would have no impact on the output)
 """
 
-def init():
+parent = {}
+rank = {}
+
+def makeRoot(nodes):
     global parent, rank
     parent = {}
     rank = {}
+    for node in nodes:
+        parent[node] = node
+        rank[node] = 0
 
-def make_set(node):
+def findRoot(node):
+    global parent
+    root = node
+    while parent[root] != root:
+        parent[root] = parent[parent[root]]
+        root = parent[root]
+    return root
+
+def unionRoot(node1, node2):
     global parent, rank
-    parent[node] = node
-    rank[node] = 0
-
-def find(node):
-    if parent[node] == node:
-        return node
-    else:
-        return find(parent[node])
-
-def union(node1, node2):
-    global parent, rank
-    root1 = find(node1)
-    root2 = find(node2)
+    root1 = findRoot(node1)
+    root2 = findRoot(node2)
     if root1 != root2:
         # Attach smaller rank tree under root of higher rank tree
         if rank[root1] > rank[root2]:
@@ -51,30 +54,25 @@ def kruskal(nodes, graph):
     """
     input:   graph   = in dictionary form {from:{to:distance, ...}, ...}
              nodes   = list of all nodes
-    output:  the MST = list of (head, tail, weight)
+    output:  the MST = list of (head, tail, weight), True if MST otherwise False
     """
-    init()
+    makeRoot(nodes)
     mst = []
-    edges = set()
+    n = len(nodes) - 1
+    edges = []
     for u in graph:
         for v in graph[u]:
-            if u < v:
-                edges.add((graph[u][v], u, v))
-            else:
-                edges.add((graph[u][v], v, u))
-    edges = list(edges)
+            edges.append((graph[u][v], u, v))
     edges = sorted(edges, key=lambda x:x[0])
-    count = 0
-    total = len(nodes) - 1
-    for node in nodes:
-        make_set(node)
-    for length, u, v in edges:
-        if union(u, v):
-            mst.append((u, v, length))
-            count += 1
-            if count == total:
+    for c, u, v in edges:
+        if unionRoot(u, v):
+            mst.append((u, v, c))
+            n -= 1
+            if n == 0:
                 break
-    return mst
+    # check nodes connectivity
+    ok = (n == 0)
+    return mst, ok
 
 
 ############################
@@ -90,7 +88,7 @@ def kruskal(nodes, graph):
 
 if __name__ == "__main__":
     
-    nodes = set(['A', 'B', 'C', 'D', 'E'])
+    nodes = ['A', 'B', 'C', 'D', 'E']
     graph = {'A': {'B':1, 'D':2},
              'B': {'C':3},
              'C': {'D':3, 'E':-1},

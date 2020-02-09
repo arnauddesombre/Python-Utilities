@@ -12,7 +12,6 @@ DFS(graph, source, rec=False): which calls one or the other (default: 'rec')
 
 # recursion will eventually crash for large graphs
 recursive = False
-
 import sys
 sys.setrecursionlimit(1000000)
 

@@ -122,6 +122,6 @@ if __name__ == "__main__":
              'I': {'H':1, 'F':1}}
 
     scc, SCC1, SCC2 = SCC(nodes, graph)
-    print scc, "components"
-    print SCC1
-    print SCC2
+    print(scc, "components")
+    print(SCC1)
+    print(SCC2)

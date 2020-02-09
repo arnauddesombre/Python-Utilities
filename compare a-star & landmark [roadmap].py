@@ -20,10 +20,11 @@ def reverse(nodes, graph):
     return rev
 
 # MAP = from http://www.dis.uniroma1.it/challenge9/download.shtml
-# download & unzip MAP.gr (graph) and MAP.co (coordinates of nodes)
+# Challenge benchmarks, line NY New York City
+# download & unzip MAP.gr (distance graph) and MAP.co (coordinates of nodes)
 MAP = "USA-road-d.NY"
 t0 = time()
-print "reading map..."
+print("reading map...")
 graph = {}
 with open(MAP + ".gr") as f:
     for line in f:
@@ -45,14 +46,14 @@ with open(MAP + ".co") as f:
             n, longitude, latitude = int(content[1]), int(content[2]), int(content[3])
             nodes[n] = (longitude/1000000., latitude/1000000.)
 
-print "done in time =", "{0:.3f}".format(time() - t0)
+print("done in time =", "{0:.3f}".format(time() - t0))
 
 t0 = time()
 graph_rev = reverse(nodes, graph)
-print "reversing graph in time =", "{0:.3f}".format(time() - t0)
+print("reversing graph in time =", "{0:.3f}".format(time() - t0))
 
 t0 = time()
-print "select landmarks"
+print("select landmarks")
 top = -float("inf")
 bottom = float("inf")
 left = float("inf")
@@ -75,15 +76,15 @@ distances = [float("inf")] * len(points)
 landmarks = [None] * len(points)
 a_star = imp.load_source("", DIR + "a-star.py")
 for node in nodes:
-    dist = [a_star._distance(nodes[node], points[i]) for i in xrange(len(points))]
-    for i in xrange(len(landmarks)):
+    dist = [a_star._distance(nodes[node], points[i]) for i in range(len(points))]
+    for i in range(len(landmarks)):
         if dist[i] < distances[i]:
             distances[i] = dist[i]
             landmarks[i] = node
-print "done in time =", "{0:.3f}".format(time() - t0)    
+print("done in time =", "{0:.3f}".format(time() - t0))
 
 print
-print "compute all distances from landmarks"
+print("compute all distances from landmarks")
 dijkstra = imp.load_source("", DIR + "dijkstra.py")
 t0 = time()
 # node was (x,y) and will become (x,y, dist1a, dist1b, ..., distNa, distNb) where
@@ -94,8 +95,8 @@ t0 = time()
 #        so the d(node, landmark) = d(landmark, node)
 for node in nodes:
     nodes[node] = list(nodes[node]) + [0] * 2 * len(landmarks)
-for i in xrange(len(landmarks)):
-    print i+1, "of", len(landmarks)
+for i in range(len(landmarks)):
+    print(i + 1, "of", len(landmarks))
     # computes distance from landmark[i] to all nodes
     A = dijkstra.dijkstra(graph, landmarks[i])
     for node in nodes:
@@ -106,70 +107,70 @@ for i in xrange(len(landmarks)):
         nodes[node][2+2*i+1] = A[node]
 for node in nodes:
     nodes[node] = tuple(nodes[node])
-print "done in time =", "{0:.3f}".format(time() - t0)
+print("done in time =", "{0:.3f}".format(time() - t0))
 
 total1, error1 = 0., []
 total2, error2 = 0., []
 total3, error3 = 0., []
 
 N_TEST = 100
-for test in xrange(N_TEST):
-    
+for test in range(N_TEST):
+
     source = random.randrange(1, N)
     destination = random.randrange(1, N)
-    
-    print
-    print "============================================"
-    print "TEST NUMBER", test + 1
-    print "computing distance from", source, "to", destination
-    print "source     ", nodes[source][:2]
-    print "destination", nodes[destination][:2]
 
     print
-    print "A star - show path"
+    print("============================================")
+    print("TEST NUMBER", test + 1)
+    print("computing distance from", source, "to", destination)
+    print("source     ", nodes[source][:2])
+    print("destination", nodes[destination][:2])
+
+    print
+    print("A star - show path")
     a_star = imp.load_source("a_star", DIR + "a-star - show path.py")
     t0 = time()
     dist_ref, parents = a_star.a_star(nodes, graph, source, destination)
     t0 = time() - t0
-    print "distance =", dist_ref
-    print "time     =", "{0:.3f}".format(t0)
+    print("distance =", dist_ref)
+    print("time     =", "{0:.3f}".format(t0))
     total1 += t0
 
     print
     # using the 8 first landmarks (4 corners + 4 center of sides)
     # using the 8 quarters is slower
-    print "landmark - show path (using 8 landmarks)"
+    print("landmark - show path (using 8 landmarks)")
     landmark = imp.load_source("landmark", DIR + "landmark - show path.py")
     t0 = time()
     dist, parents = landmark.landmark(nodes, graph, source, destination, landmarks, 8, False)
     t0 = time() - t0
     if dist != dist_ref:
-        print "distance =", dist
-        print "################### !!!"
+        print("distance =", dist)
+        print("################### !!!")
         error2.append(abs(dist - dist_ref))
-    print "time     =", "{0:.3f}".format(t0)
+    print("time     =", "{0:.3f}".format(t0))
     total2 += t0
 
     print
-    print "landmark - show path (using best landmarks)"
+    print("landmark - show path (using best landmarks)")
     landmark = imp.load_source("landmark", DIR + "landmark - show path.py")
     t0 = time()
     dist, parents = landmark.landmark(nodes, graph, source, destination, landmarks, 16, True)
     t0 = time() - t0
     if dist != dist_ref:
-        print "distance =", dist
-        print "################### !!!"
+        print("distance =", dist)
+        print("################### !!!")
         error3.append(abs(dist - dist_ref))
-    print "time     =", "{0:.3f}".format(t0)
+    print("time     =", "{0:.3f}".format(t0))
     total3 += t0
 
 print
-print "============================================"
-print "Time for", N_TEST, "calculations ( [errors] ):"
+print("============================================")
+print("Time for", N_TEST, "calculations ( [errors] ):")
 print
-print "A star - show path                   ", "{0:.3f}".format(total1), " (", error1, ")"
-print "landmarks - show path (8 landmarks)  ", "{0:.3f}".format(total2), " (", error2, ")"
-print "landmarks - show path (4 best)       ", "{0:.3f}".format(total3), " (", error3, ")"
+print("A star - show path                   ", "{0:.3f}".format(total1), " (", error1, ")")
+print("landmarks - show path (8 landmarks)  ", "{0:.3f}".format(total2), " (", error2, ")")
+print("landmarks - show path (4 best)       ", "{0:.3f}".format(total3), " (", error3, ")")
 
 
 """

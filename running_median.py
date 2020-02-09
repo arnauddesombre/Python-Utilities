@@ -103,4 +103,4 @@ if __name__ == "__main__":
     median = Median()
     for x in value:
         median.add(x)
-        print x, "   ", median.median()
+        print(x, "   ", median.median())

@@ -26,9 +26,10 @@ def dijkstra(graph, source, destination=None):
             parents[v] = parent
             if v == destination:
                 break
-            for w, edge_len in graph[v].items():
-                if w not in A:
-                    heappush(queue, (path_len + edge_len, w, v))
+            if v in graph:
+                for w, edge_len in graph[v].items():
+                    if w not in A:
+                        heappush(queue, (path_len + edge_len, w, v))
     if destination == None:
         # return all distances & parents dictionary
         return A, parents

@@ -5,6 +5,9 @@ node by brute recursive enumeration
 
 Variant:
 find only one
+
+Possibly better algorithms:
+https://www.geeksforgeeks.org/find-paths-given-source-destination/
 """
 import sys
 sys.setrecursionlimit(1000000)
@@ -41,6 +44,31 @@ def find_path(start, end, path=[]):
                 return newpath
     return None
 
+#################
+'''
+from:
+https://introcs.cs.princeton.edu/java/45graph/AllPaths.java
+'''
+
+paths = []
+path = []
+onpath = set([])
+
+def allpaths(s, t):
+    enum(s, t)
+    return paths
+
+def enum(v, t):
+    path.append(v)
+    onpath.add(v)
+    if v == t:
+        paths.append(list(path))
+    else:
+        for w in graph[v]:
+            if w not in onpath:
+                enum(w, t)
+    path.pop()
+    onpath.remove(v)
 
 ############################
 #        E
@@ -64,6 +92,8 @@ if __name__ == "__main__":
 
     print
     print find_all_paths('A', 'E')
+    print
+    print allpaths('A', 'E')
     print
     print find_path('A', 'E')
     print

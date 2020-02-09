@@ -21,9 +21,10 @@ def dijkstra(graph, source, destination=None):
             A[v] = path_len
             if v == destination:
                 break
-            for w, edge_len in graph[v].items():
-                if w not in A:
-                    heappush(queue, (path_len + edge_len, w))
+            if v in graph:
+                for w, edge_len in graph[v].items():
+                    if w not in A:
+                        heappush(queue, (path_len + edge_len, w))
     if destination == None:
         # return all distances
         return A
@@ -57,7 +58,7 @@ if __name__ == "__main__":
              'E': {'C':2, 'D':1}}
 
     print
-    print dijkstra(graph, 'A')
+    print(dijkstra(graph, 'A'))
     print
-    print dijkstra(graph, 'A', 'C')
+    print(dijkstra(graph, 'A', 'C'))
     print

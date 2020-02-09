@@ -20,23 +20,21 @@ def prim(nodes, graph):
     """
     input:   graph   = in dictionary form {from:{to:distance, ...}, ...}
              nodes   = list of all nodes
-    output:  the MST = list of (head, tail, weight)
+    output:  the MST = list of (head, tail, weight), True if MST otherwise False
     """
     edges = {}
     for node in nodes:
-        edges[node] = set()
+        edges[node] = []
     for n1 in graph:
         for n2 in graph[n1]:
-            edges[n1].add((graph[n1][n2], n1, n2))
-            edges[n2].add((graph[n1][n2], n2, n1))
-
+            edges[n1].append((graph[n1][n2], n1, n2))
+            edges[n2].append((graph[n1][n2], n2, n1))
     mst = []
     # node is a random node from the graph
-    node = random.choice(graph.keys())
+    node = random.choice(list(graph.keys()))
     visited = {node:True}
-    usable_edges = list(edges[node])
+    usable_edges = list(edges[node]) # deep copy
     heapify(usable_edges)
-
     while usable_edges:
         cost, n1, n2 = heappop(usable_edges)
         if n2 not in visited:
@@ -45,8 +43,12 @@ def prim(nodes, graph):
             for e in edges[n2]:
                 if e[2] not in visited:
                     heappush(usable_edges, e)
-
-    return mst
+    ok = True
+    for node in nodes:
+        if node not in visited:
+            ok = False
+            break
+    return mst, ok
 
 
 ############################
@@ -70,5 +72,5 @@ if __name__ == "__main__":
              'E': {}}
 
     print
-    print prim(nodes, graph)
+    print(prim(nodes, graph))
     print

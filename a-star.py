@@ -89,5 +89,5 @@ if __name__ == "__main__":
     set_distance("euclid")
     dist = a_star(nodes, graph, source, destination)
 
-    print "distance =", dist
+    print("distance =", dist)
     print
