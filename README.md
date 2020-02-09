@@ -1,8 +1,8 @@
 # Python utilities
-My Python utility programs
+My Python utility programs.
 
 Each program in this repository is a stand-alone file.<br>
-Works in Python 2 and 3 
+Works in Python 2 and 3.
 
 
 Tip to import a homemade method in another python program:
