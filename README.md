@@ -61,7 +61,8 @@ Contain the following arithmetic functions:<br>
 - lcm(a, b): return lowest common multiple of a and b
 - lcmm(*args): return lcm of args
 - prime_decomposition(n): return all the prime factors of n in a list
-- factors(n): return all the factors (divisors) of n in a list
+- factors(n): return all the factors (divisors) of n in a list (brute-force from 1 to sqrt(n))
+- divisors(n): same as factors(n), using combination of prime factors (much more efficient)
 
 ----------
 
