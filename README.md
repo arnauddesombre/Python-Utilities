@@ -258,8 +258,8 @@ This program reads the graph from text file points.txt<br>
 
 ----------
 
-<b>longest Common Sub-Sequence.py</b><br>
-<b>longest Common Sub-String.py</b><br>
+<b>longest common sub-sequence.py</b><br>
+<b>longest common sub-string.py</b><br>
 Determine the longest sub-sequence / sub-string between two sequences (strings).<br>
 
 ----------
