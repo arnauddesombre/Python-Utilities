@@ -272,12 +272,12 @@ Find the longest palindrome within a string, using Manacher's algorithm.<br>
 <b>parallel_cpu_1.py</b><br>
 <b>parallel_cpu_2.py</b><br>
 
-_1: Parallel execution using multiprocessing/map<br>
-from multiprocessing.dummy import Pool as ThreadPool<br>
+1: Parallel execution using multiprocessing/map<br>
+<i>from multiprocessing.dummy import Pool as ThreadPool</i><br>
 
-_2: Parallel execution using pathos/map
-from pathos.multiprocessing import cpu_count
-from pathos.pools import ParallelPool
+2: Parallel execution using pathos/map<br>
+<i>from pathos.multiprocessing import cpu_count</i><br>
+<i>from pathos.pools import ParallelPool</i><br>
 
 ----------
 
