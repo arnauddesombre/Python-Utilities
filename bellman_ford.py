@@ -64,16 +64,16 @@ if __name__ == "__main__":
     if BF[2]:
         print("There is at least 1 negative cycle")
         print("Bellman-Ford failed")
-        print
+        print()
         print("some nodes on all negative cycle(s)")
         print(BF[2])
-        print
+        print()
     else:
         print("There is no negative cycle")
         print("Bellman-Ford is correct")
-        print
+        print()
         print("distances from source:")
         print(BF[0])
-        print
+        print()
     print("Parent dictionary:")
     print(BF[1])

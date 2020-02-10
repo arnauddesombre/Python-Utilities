@@ -57,8 +57,8 @@ if __name__ == "__main__":
              'D': {'A':2, 'C':3, 'E':1},
              'E': {'C':2, 'D':1}}
 
-    print
+    print()
     print(dijkstra(graph, 'A'))
-    print
+    print()
     print(dijkstra(graph, 'A', 'C'))
-    print
+    print()

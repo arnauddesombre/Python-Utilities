@@ -110,11 +110,11 @@ if __name__ == "__main__":
     x1 = DFS(graph, 'X')
     x2 = DFS_recursive(graph, 'X')
     x3 = DFS_linear(graph, 'X')
-    print x1[0]
-    print x2[0]
-    print x3[0]
-    print
-    print x1[1]
-    print x2[1]
-    print x3[1]
+    print(x1[0])
+    print(x2[0])
+    print(x3[0])
+    print()
+    print(x1[1])
+    print(x2[1])
+    print(x3[1])
 

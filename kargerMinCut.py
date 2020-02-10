@@ -204,6 +204,6 @@ if __name__ == "__main__":
     graph.addEdge('G', 'H', 3)
 
     nCut, group1, group2 = kargerMinCut(graph)
-    print "# cuts =", nCut
-    print "group1 =", group1
-    print "group2 =", group2
+    print("# cuts =", nCut)
+    print("group1 =", group1)
+    print("group2 =", group2)

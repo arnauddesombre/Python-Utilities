@@ -131,4 +131,4 @@ if __name__ == "__main__":
     for x in range(1, k+1):
         print(x, "=", cluster[0][x])
     print("minimum distance =", cluster[1])
-    print
+    print()

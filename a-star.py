@@ -90,4 +90,4 @@ if __name__ == "__main__":
     dist = a_star(nodes, graph, source, destination)
 
     print("distance =", dist)
-    print
+    print()

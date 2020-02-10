@@ -71,7 +71,7 @@ if __name__ == "__main__":
     distance = result[0]
     path = [new_nodes[x] for x in result[1]] + [new_nodes[0]]
 
-    print
+    print()
     print(" -> ".join(path))
     print(distance)
 
@@ -81,4 +81,4 @@ if __name__ == "__main__":
         L = L + graph[path[i]][path[i+1]]
     print(L)
     assert distance == L
-    print
+    print()

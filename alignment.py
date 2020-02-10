@@ -60,12 +60,12 @@ if __name__ == "__main__":
     # disallow substitution:
     a = align(string1, string2, 1., float("inf"))
 
-    print
+    print()
     print(string1)
     print(string2)
-    print
+    print()
     print(a[0])
     print(a[1])
-    print
+    print()
     print("cost =", a[2])
-    print
+    print()

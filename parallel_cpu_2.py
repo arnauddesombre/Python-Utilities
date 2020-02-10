@@ -33,8 +33,8 @@ result = function(3093215881333057)
 t1 = time()
 T1 = t1 - t0
 print(result)
-print("in time =", "{0:.3f}".format(T1))
-print
+print("in time = {0:.3f}".format(T1))
+print('')
 
 # parallel calculation
 numbers = [3093215881333057, 3093215881333057, 3093215881333057, 3093215881333057]
@@ -54,7 +54,7 @@ t1 = time()
 T2 = t1 - t0
 
 print(results)
-print("in time =", "{0:.3f}".format(T2))
-print
-print("ratio = ", "{0:.2f}%".format(100. * T2 / T1))
+print("in time = {0:.3f}".format(T2))
+print('')
+print("ratio =   {0:.2f}%".format(100. * T2 / T1))
 

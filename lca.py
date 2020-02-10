@@ -192,7 +192,7 @@ if __name__ == '__main__':
     print(path_from_root(graph, root, 8))
     print(path_from_root(graph, root, 13))
     print(path_from_root(graph, root, 99))
-    print
+    print()
     print('ANCESTOR')
     print('O(N)')
     print(lca_N_1(graph, root, 5, 10), lca_N_2(parent, 5, 10))
@@ -216,5 +216,3 @@ if __name__ == '__main__':
     print(lca_log_n(log_n, level, P, 5, 9))
     print(lca_log_n(log_n, level, P, 12, 11))
     print(lca_log_n(log_n, level, P, 5, 99))
-
-

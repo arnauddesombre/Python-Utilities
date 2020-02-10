@@ -4,14 +4,14 @@ all-pairs shortest paths
 """
 
 def floyd_warshall(graph, n):
-    dist = [[float('inf')] * n for _ in xrange(n)]
+    dist = [[float('inf')] * n for _ in range(n)]
     for u in graph:
         dist[u][u] = 0
         for v in graph[u]:
             dist[u][v] = graph[u][v]
-    for k in xrange(n):
-        for i in xrange(n):
-            for j in xrange(n):
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
                 dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
     return dist
 
@@ -33,11 +33,11 @@ if __name__ == "__main__":
     n = len(graph)
     matrix = floyd_warshall(graph, n)
 
-    for k in xrange(n):
+    for k in range(n):
         if matrix[k][k] < 0:
-            print "Graph contains a negative-weight cycle"
-            print
+            print("Graph contains a negative-weight cycle")
+            print()
             break
 
     from pprint import pprint
-    pprint (matrix)
+    pprint(matrix)

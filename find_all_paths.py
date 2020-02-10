@@ -90,10 +90,10 @@ if __name__ == "__main__":
              'D': {'A':2, 'C':3, 'E':4},
              'E': {'C':4, 'D':4}}
 
-    print
-    print find_all_paths('A', 'E')
-    print
-    print allpaths('A', 'E')
-    print
-    print find_path('A', 'E')
+    print()
+    print(find_all_paths('A', 'E'))
+    print()
+    print(allpaths('A', 'E'))
+    print()
+    print(find_path('A', 'E'))
     print

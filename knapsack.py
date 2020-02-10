@@ -43,10 +43,10 @@ def knapsack2(W):
     n = len(weight) - 1
     # define n+1 * W+1 array of 0 (integer)
     A = np.zeros((n+1, W+1), dtype=np.int)
-    for x in xrange(0, W+1):
+    for x in range(0, W+1):
         A[0][x] = 0
-    for i in xrange(1, n+1):
-        for x in xrange(0, W+1):
+    for i in range(1, n+1):
+        for x in range(0, W+1):
             if weight[i] > x:
                 A[i][x] = A[i-1][x]
             else:
@@ -74,8 +74,8 @@ if __name__ == "__main__":
 
     # recursive algorithm
     ############################
-    print
-    print knapsack1(sizeKnapsack)
+    print()
+    print(knapsack1(sizeKnapsack))
     # retrieve list of item
     item = []
     w = sizeKnapsack
@@ -83,12 +83,12 @@ if __name__ == "__main__":
         if i-1 in A and A[i][w] != A[i-1][w]:
             item.append(i)
             w -= weight[i]
-    print item
+    print(item)
 
     # dynamic programming algorithm
     ############################
-    print
+    print()
     A, item = knapsack2(sizeKnapsack)
-    print A
-    print item
-print
+    print(A)
+    print(item)
+print()

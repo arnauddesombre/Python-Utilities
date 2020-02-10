@@ -71,6 +71,6 @@ if __name__ == "__main__":
              'D': {'E':1},
              'E': {}}
 
-    print
+    print()
     print(prim(nodes, graph))
-    print
+    print()

@@ -28,7 +28,7 @@ t1 = time()
 T1 = t1 - t0
 print(result)
 print("in time =", "{0:.3f}".format(T1))
-print
+print()
 
 # parallel calculation
 print("parallel calculations")
@@ -49,6 +49,6 @@ T2 = t1 - t0
 
 print(results)
 print("in time =", "{0:.3f}".format(T2))
-print
+print()
 print("ratio = ", "{0:.2f}%".format(100. * T2 / T1))
 

@@ -95,6 +95,6 @@ if __name__ == "__main__":
              'D': {'E':1},
              'E': {}}
 
-    print
-    print kruskal(nodes, graph)
-    print
+    print()
+    print(kruskal(nodes, graph))
+    print()

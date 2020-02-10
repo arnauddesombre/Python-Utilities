@@ -83,7 +83,7 @@ for node in nodes:
             landmarks[i] = node
 print("done in time =", "{0:.3f}".format(time() - t0))
 
-print
+print()
 print("compute all distances from landmarks")
 dijkstra = imp.load_source("", DIR + "dijkstra.py")
 t0 = time()
@@ -119,14 +119,14 @@ for test in range(N_TEST):
     source = random.randrange(1, N)
     destination = random.randrange(1, N)
 
-    print
+    print()
     print("============================================")
     print("TEST NUMBER", test + 1)
     print("computing distance from", source, "to", destination)
     print("source     ", nodes[source][:2])
     print("destination", nodes[destination][:2])
 
-    print
+    print()
     print("A star - show path")
     a_star = imp.load_source("a_star", DIR + "a-star - show path.py")
     t0 = time()
@@ -136,7 +136,7 @@ for test in range(N_TEST):
     print("time     =", "{0:.3f}".format(t0))
     total1 += t0
 
-    print
+    print()
     # using the 8 first landmarks (4 corners + 4 center of sides)
     # using the 8 quarters is slower
     print("landmark - show path (using 8 landmarks)")
@@ -151,7 +151,7 @@ for test in range(N_TEST):
     print("time     =", "{0:.3f}".format(t0))
     total2 += t0
 
-    print
+    print()
     print("landmark - show path (using best landmarks)")
     landmark = imp.load_source("landmark", DIR + "landmark - show path.py")
     t0 = time()
@@ -164,10 +164,10 @@ for test in range(N_TEST):
     print("time     =", "{0:.3f}".format(t0))
     total3 += t0
 
-print
+print()
 print("============================================")
 print("Time for", N_TEST, "calculations ( [errors] ):")
-print
+print()
 print("A star - show path                   ", "{0:.3f}".format(total1), " (", error1, ")")
 print("landmarks - show path (8 landmarks)  ", "{0:.3f}".format(total2), " (", error2, ")")
 print("landmarks - show path (4 best)       ", "{0:.3f}".format(total3), " (", error3, ")")

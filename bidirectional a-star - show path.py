@@ -149,4 +149,4 @@ if __name__ == "__main__":
 
     print("distance =", dist)
     print("path     =", path)
-    print
+    print()

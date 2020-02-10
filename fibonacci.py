@@ -53,4 +53,4 @@ def fibo(n):
 
 if __name__ == "__main__":
     for i in list(range(0, 10)) + list(range(100, 110)):
-        print ("Fibonacci of", i, "=", fibo(i))
+        print("Fibonacci of", i, "=", fibo(i))

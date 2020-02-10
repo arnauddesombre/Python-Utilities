@@ -74,10 +74,10 @@ if __name__ == "__main__":
 
     A, parents = dijkstra(graph, 'A')
 
-    print A
-    print
+    print(A)
+    print()
     source = 'A'
     destination = 'C'
-    print A[destination]
-    print dijkstra_path(parents, source, destination)
-    print
+    print(A[destination])
+    print(dijkstra_path(parents, source, destination))
+    print()
