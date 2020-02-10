@@ -122,7 +122,7 @@ Implementation of Binary Indexed Trees (Fenwick Tree).<br>
 
 <b>centroid.py</b><br>
 Implementation of the Centroid Decomposition of a Tree.<br>
-This program should be provided the text file centroid.txt as input<br>
+This program should be provided the text file centroid.txt as input:<br>
 <i>python centroid.py < centroid.txt</i><br>
 
 ----------
@@ -161,8 +161,8 @@ http://www.cs.princeton.edu/courses/archive/spr06/cos423/Handouts/EPP%20shortest
 ----------
 
 <b>convex hull.py</b><br>
-Determine the convex hull of a set of points using Graham scan algorithm.
-This program should be provided the text file convex_hall.txt as input<br>
+Determine the convex hull of a set of points using Graham scan algorithm.<br>
+This program should be provided the text file convex_hall.txt as input:<br>
 <i>python "convex hall.py" < convex_hall.txt</i><br>
 
 ----------
@@ -257,7 +257,7 @@ Return:
 
 <b>lca.py</b><br>
 Miscellaneous implementation of Lowest Common Ancestor algorithms, with optimizations for competitive programming.<br>
-This program should be provided the text file lca.txt as input<br>
+This program should be provided the text file lca.txt as input:<br>
 <i>python lca.py < lca.txt</i><br>
 
 ----------
@@ -265,7 +265,7 @@ This program should be provided the text file lca.txt as input<br>
 <b>longest common sub-sequence.py</b><br>
 <b>longest common sub-string.py</b><br>
 Determine the longest sub-sequence / sub-string between two sequences (strings).<br>
-This program should be provided the text file "longest common sub.txt" as input<br>
+This program should be provided the text file "longest common sub.txt" as input:<br>
 <i>python "longest common sub-sequence.py" < "longest common sub.txt"</i><br>
 
 a sub-string is a contiguous part of a string (AB is a sub-string of ABABA).<br>
