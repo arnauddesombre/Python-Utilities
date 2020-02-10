@@ -17,7 +17,7 @@ x = BF.bellman_ford(graph, node)
 
 <b>alignment.py </b><br>
 <b>alignment v2.py</b><br>
-Sequence alignment: align 2 strings minimizing substitution and insertion cost.<br>
+Sequence alignment (align 2 strings minimizing substitution and insertion cost).<br>
 Optional parameters:
 - penalty for substitution<br>
 - penalty for gap insertion<br>
