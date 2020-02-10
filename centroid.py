@@ -72,7 +72,7 @@ def build_centroid_recursively(graph, n, tree = {}, center = None, exclude = set
     # tree['root'] = the root of tree
     # tree[u] = set of all nodes connected to node u
     if center == None:
-        center = find_centroid(graph, n, graph.keys()[0])
+        center = find_centroid(graph, n, list(graph.keys())[0])
         tree = {'root':center}
     if center not in tree:
         tree[center] = set()

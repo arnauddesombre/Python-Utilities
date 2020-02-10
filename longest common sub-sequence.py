@@ -44,5 +44,6 @@ if __name__ == "__main__":
     except:
         s1 = input().strip()
         s2 = input().strip()
-    print(s1, s2)
+    print('S1:', s1)
+    print('S2:', s2)
     print(lcseq(s1, s2))

@@ -27,7 +27,7 @@ class Point:
 # read points from points.txt
 points = []
 ref = 0
-with open("points.txt") as f:
+with open("convex_hull.txt") as f:
     for line in f:
         x, y = map(float, line.split())
         points.append(Point(ref, x, y))

@@ -52,6 +52,6 @@ def longestPalindrome(s):
 
 if __name__ == "__main__":
     string = "a man a plan a canal panama"
-    string = string.replace(' ', '') + string
+    string = string.replace(' ', '')
     print("string            :", string)
     print("longest palindrome:", longestPalindrome(string))

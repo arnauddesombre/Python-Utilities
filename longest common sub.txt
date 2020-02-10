@@ -1,0 +1,2 @@
+This is the first string... enjoy!
+This is the second string... enjoy!
