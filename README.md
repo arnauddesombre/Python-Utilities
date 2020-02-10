@@ -267,10 +267,11 @@ This program should be provided the text file lca.txt as input:<br>
 Determine the longest sub-sequence / sub-string between two sequences (strings).<br>
 This program should be provided the text file "longest common sub.txt" as input:<br>
 <i>python "longest common sub-sequence.py" < "longest common sub.txt"</i><br>
+<i>python "longest common sub-string.py"   < "longest common sub.txt"</i><br>
 
 Note:<br>
-a sub-string is a contiguous part of a string (AB is a sub-string of ABABA).<br>
-a sub-sequence is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements (AAA is a sub-string of ABABA).<br>
+- a sub-string is a contiguous part of a string (AB is a sub-string of ABABA).<br>
+- a sub-sequence is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements (AAA is a sub-string of ABABA).<br>
 
 ----------
 
