@@ -96,7 +96,7 @@ Return:
 ----------
 
 <b>bidirectional a-star - show path.py</b><br>
-compute the shortest distance from a source to a destination in a directed graph where some crow distance ([Euclid](https://en.wikipedia.org/wiki/Euclidean_distance) or [haversine](https://en.wikipedia.org/wiki/Haversine_formula) can be defined as well as the shortest corresponding path using bi-directional A\* algorithm.<br>
+Compute the shortest distance from a source to a destination in a directed graph where some crow distance ([Euclid](https://en.wikipedia.org/wiki/Euclidean_distance) or [haversine](https://en.wikipedia.org/wiki/Haversine_formula) can be defined as well as the shortest corresponding path using bi-directional A\* algorithm.<br>
 /!\ all distances must be >= 0<br>
 
 Return:
@@ -106,7 +106,7 @@ Return:
 ----------
 
 <b>bidirectional dijkstra - show path.py</b><br>
-compute the shortest distance from a source to a destination in a directed graph as well as the shortest corresponding path using bi-directional Dijkstra algorithm.<br>
+Compute the shortest distance from a source to a destination in a directed graph as well as the shortest corresponding path using bi-directional Dijkstra algorithm.<br>
 /!\ all distances must be >= 0<br>
 
 Return:
@@ -137,7 +137,7 @@ Return:
 ----------
 
 <b>combinations.py</b><br>
-Miscellaneous implementations of “n choose r” nCr(), with optimizations for competitive programming.<br>
+Miscellaneous implementations of nCr(), the “n choose r” function, with some optimizations for competitive programming.<br>
 
 ----------
 
@@ -224,7 +224,7 @@ Implementation of the Kadane algorithm (Maximum subarray problem).<br>
 ----------
 
 <b>kargerMinCut.py</b><br>
-Computes the minimum cut of an undirected graph using Karger's algorithm.<br>
+Compute the minimum cut of an undirected graph using Karger's algorithm.<br>
 
 ----------
 
@@ -241,12 +241,12 @@ Knapsack algorithm (Given a set of items, each with a weight and a value, determ
 ----------
 
 <b>kruskal.py</b><br>
-Computes Kruskal's minimum spanning tree (MST) algorithm of an undirected graph (edge's costs can be negative).<br>
+Compute Kruskal's minimum spanning tree (MST) algorithm of an undirected graph (edge's costs can be negative).<br>
 
 ----------
 
 <b>landmark - show path.py</b><br>
-compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined, and where distances from some landmarks are known, as well as the shortest corresponding path.<br>
+Compute the shortest distance from a source to a destination in a directed graph where some crow distance (Euclid) can be defined, and where distances from some landmarks are known, as well as the shortest corresponding path.<br>
 /!\ all distances must be >= 0<br>
 
 Return:
@@ -256,7 +256,7 @@ Return:
 ----------
 
 <b>lca.py</b><br>
-Miscellaneous implementation of Lowest Common Ancestor algorithms, with optimizations for competitive programming.<br>
+Miscellaneous implementation of Lowest Common Ancestor (LCA) algorithms, with some optimizations for competitive programming.<br>
 This program should be provided the text file lca.txt as input:<br>
 <i>python lca.py < lca.txt</i><br>
 
@@ -268,6 +268,7 @@ Determine the longest sub-sequence / sub-string between two sequences (strings).
 This program should be provided the text file "longest common sub.txt" as input:<br>
 <i>python "longest common sub-sequence.py" < "longest common sub.txt"</i><br>
 
+Note:<br>
 a sub-string is a contiguous part of a string (AB is a sub-string of ABABA).<br>
 a sub-sequence is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements (AAA is a sub-string of ABABA).<br>
 
@@ -280,6 +281,7 @@ Find the longest palindrome within a string, using Manacher's algorithm.<br>
 
 <b>parallel_cpu_1.py</b><br>
 <b>parallel_cpu_2.py</b><br>
+Template for parallel processing in Python.<br>
 
 1: Parallel execution using multiprocessing/map<br>
 <i>from multiprocessing.dummy import Pool as ThreadPool</i><br>
@@ -291,7 +293,7 @@ Find the longest palindrome within a string, using Manacher's algorithm.<br>
 ----------
 
 <b>prim.py</b><br>
-Computes Prim's minimum spanning tree (MST) algorithm of an undirected graph (edge's costs can be negative).<br>
+Compute Prim's minimum spanning tree (MST) algorithm of an undirected graph (edge's costs can be negative).<br>
 
 ----------
 
@@ -301,7 +303,7 @@ Find the rank of a matrix (not necessarily square).<br>
 ----------
 
 <b>running_median.py</b><br>
-Computes the running median of a series of numbers in O(Log(n)) time, which is the most efficient algorithm.<br>
+Compute the running median of a series of numbers in O(Log(n)) time, which is the most efficient algorithm.<br>
 
 ----------
 
@@ -322,19 +324,19 @@ Implementation of Segment Tree.<br>
 ----------
 
 <b>traveling_salesman.py</b><br>
-Computes the shortest path between all nodes of a connected graph starting at one particular node and returning at that same node (connected = there is a path between every pair of nodes).<br>
+Compute the shortest path between all nodes of a connected graph starting at one particular node and returning at that same node (connected = there is a path between every pair of nodes).<br>
 (implementation with dynamic programming algorithm)<br>
 
 ----------
 
 <b>trie.py</b><br>
-Implementation of a TRIE<br>
+Implementation of a TRIE (prefix tree)<br>
 
 ----------
 
 <b>weekday.py</b><br>
-isleap(year) return a Boolean indicating if the year is leap<br>
-weekday(day, month, year) return the day of the week for any date<br>
+- isleap(year) return a Boolean indicating if the year is leap<br>
+- weekday(day, month, year) return the day of the week for any date<br>
 
 Note that the periodicity of weekday is 2800 years. i.e:<br>
 weekday(day, month, year) == weekday(day, month, year + 2800) for any date<br>
