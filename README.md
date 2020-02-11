@@ -204,7 +204,7 @@ Return:
 
 <b>fibonacci.py</b><br>
 Calculate the Fibonacci numbers using Matrix exponentiation.<br>
-This method has an O(Log(N)) time complexity, much better than the brute-force method using F(n) = F(n-1) + F(n-2) which is O(N).
+This method has an O(Log(N)) time complexity, much better than the brute-force method calculating all Fibonacci numbers from 1 to n using using F(n) = F(n-1) + F(n-2) in O(N) time.
 
 ----------
 
