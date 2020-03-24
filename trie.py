@@ -8,6 +8,8 @@ class TrieNode:
 class Trie:
     def __init__(self):
         self.root = TrieNode()
+        # declare variables for needed computations
+        self.words = []
 
     def __charToIndex(self, char):
         return ord(char) - ord('a')
@@ -40,18 +42,19 @@ class Trie:
     def bfs(self, word='', pCrawl=0):
         # print all words in trie starting with word (using BFS)
         if pCrawl == 0:
+            self.words = []
             if word == '':
                 pCrawl = self.root
             else:
                 pCrawl = self.__searchNode(word)
                 if pCrawl == None:
-                    print('n/a')
+                    self.words.append('n/a')
                     return
         for index, child in enumerate(pCrawl.children):
             if child != None:
                 w = word + self.__indexToChar(index)
                 if child.isEndOfWord:
-                    print(w)
+                    self.words.append(w)
                 self.bfs(w, child)
 
 # driver function
@@ -66,10 +69,13 @@ def main():
         print("{} ---- {}".format(word, output[t.search(word)]))
     print('print all words in trie:')
     t.bfs()
+    print(t.words)
     print('print all words starting with "th" in trie:')
     t.bfs('th')
+    print(t.words)
     print('print all words starting with "b" in trie:')
     t.bfs('b')
+    print(t.words)
     
 if __name__ == '__main__':
     main()

@@ -79,6 +79,8 @@ def query(data, n, left, right):
     # applies 'combine' to the elements of A
     # (such as data = construction(A))
     # from left (*included*) to right (*excluded*)
+    # NOTE: data[1] always contains the 'combine'
+    #       value for all the elements of A
     left += n
     right += n
     resl = extrema
